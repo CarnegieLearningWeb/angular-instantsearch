@@ -2,7 +2,7 @@ import {
   NgAisModule,
   NgAisInstantSearchModule,
   NgAisToggleModule,
-} from '../../index';
+} from '../../public-api';
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { readFile } from 'fs';
