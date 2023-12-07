@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/reverse-highlight/__tests__/reverse-highlight.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/snippet/__tests__/snippet.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/reverse-snippet/__tests__/reverse-snippet.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/stats/__tests__/stats.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/range-slider/__tests__/range-slider.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/rating-menu/__tests__/rating-menu.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/toggle/__tests__/toggle.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/query-rule-context/__tests__/query-rule-context.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/sort-by/__tests__/sort-by.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/voice-search/__tests__/voice-search.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/query-rule-custom-data/__tests__/query-rule-custom-data.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/refinement-list/__tests__/refinement-list.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/range-input/__tests__/range-input.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/search-box/__tests__/search-box.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/__tests__/tree-shaking/tree-shaking.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/hits-per-page/__tests__/hits-per-page.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/hits/__tests__/hits.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/index-widget/__tests__/index-widget.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/infinite-hits/__tests__/infinite-hits.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/instantsearch/__tests__/instantsearch.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/current-refinements/__tests__/current-refinements.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/menu/__tests__/menu.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/hierarchical-menu/__tests__/hierarchical-menu.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/highlight/__tests__/highlight.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/pagination/__tests__/pagination.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/configure-related-items/__tests__/configure-related-items.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/configure/__tests__/configure.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/numeric-menu/__tests__/numeric-menu.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/breadcrumb/__tests__/breadcrumb.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/clear-refinements/__tests__/clear-refinements.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/__tests__/utils.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/__tests__/create-ssr-search-client-v3.spec.ts">
+  </file>
+  <file path="/Users/kschaefer/git/angular-instantsearch/projects/angular-instantsearch/src/__tests__/create-ssr-search-client-v4.spec.ts">
+  </file>
+</testExecutions>

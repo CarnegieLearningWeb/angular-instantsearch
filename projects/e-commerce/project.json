@@ -86,21 +86,10 @@
       }
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/types/cli-types"],
       "options": {
-        "main": "projects/e-commerce/src/test.ts",
-        "polyfills": "projects/e-commerce/src/polyfills.ts",
-        "tsConfig": "projects/e-commerce/tsconfig.spec.json",
-        "karmaConfig": "projects/e-commerce/karma.conf.js",
-        "inlineStyleLanguage": "sass",
-        "assets": [
-          "projects/e-commerce/src/favicon.ico",
-          "projects/e-commerce/src/assets"
-        ],
-        "styles": [
-          "projects/e-commerce/src/styles.sass"
-        ],
-        "scripts": []
+        "jestConfig": "libs/types/cli-types/jest.config.ts"
       }
     },
     "lint": {
