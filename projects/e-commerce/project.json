@@ -1,0 +1,107 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "e-commerce",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "sass"
+    },
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "projects/e-commerce/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/e-commerce",
+        "index": "projects/e-commerce/src/index.html",
+        "main": "projects/e-commerce/src/main.ts",
+        "polyfills": "projects/e-commerce/src/polyfills.ts",
+        "tsConfig": "projects/e-commerce/tsconfig.app.json",
+        "inlineStyleLanguage": "css",
+        "assets": [
+          "projects/e-commerce/src/favicon.ico",
+          "projects/e-commerce/src/assets"
+        ],
+        "styles": [
+          "projects/e-commerce/src/theme.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "projects/e-commerce/src/environments/environment.ts",
+              "with": "projects/e-commerce/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "e-commerce:build:production"
+        },
+        "development": {
+          "buildTarget": "e-commerce:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "e-commerce:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "projects/e-commerce/src/test.ts",
+        "polyfills": "projects/e-commerce/src/polyfills.ts",
+        "tsConfig": "projects/e-commerce/tsconfig.spec.json",
+        "karmaConfig": "projects/e-commerce/karma.conf.js",
+        "inlineStyleLanguage": "sass",
+        "assets": [
+          "projects/e-commerce/src/favicon.ico",
+          "projects/e-commerce/src/assets"
+        ],
+        "styles": [
+          "projects/e-commerce/src/styles.sass"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}
