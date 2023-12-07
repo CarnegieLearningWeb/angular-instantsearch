@@ -43,6 +43,7 @@ export class NgAisHitsPerPage extends TypedBaseWidget<
 
   public state: HitsPerPageRenderState = {
     items: [],
+    createURL: () => '',
     refine: noop,
     hasNoResults: true, // TODO: disable <select> when true
     canRefine: false,
