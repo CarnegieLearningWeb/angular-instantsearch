@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgAisHighlight } from './highlight';
 
 @NgModule({
-  declarations: [NgAisHighlight],
-  entryComponents: [NgAisHighlight],
-  exports: [NgAisHighlight],
-  imports: [CommonModule],
+    declarations: [NgAisHighlight],
+    exports: [NgAisHighlight],
+    imports: [CommonModule]
 })
 export class NgAisHighlightModule {}

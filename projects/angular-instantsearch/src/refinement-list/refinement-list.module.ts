@@ -6,9 +6,8 @@ import { NgAisRefinementList } from './refinement-list';
 import { NgAisFacetsSearch } from './facets-search';
 
 @NgModule({
-  declarations: [NgAisRefinementList, NgAisFacetsSearch],
-  entryComponents: [NgAisRefinementList],
-  exports: [NgAisRefinementList],
-  imports: [CommonModule, NgAisHighlightModule],
+    declarations: [NgAisRefinementList, NgAisFacetsSearch],
+    exports: [NgAisRefinementList],
+    imports: [CommonModule, NgAisHighlightModule]
 })
 export class NgAisRefinementListModule {}

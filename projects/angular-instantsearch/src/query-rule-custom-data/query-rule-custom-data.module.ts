@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgAisQueryRuleCustomData } from './query-rule-custom-data';
 
 @NgModule({
-  declarations: [NgAisQueryRuleCustomData],
-  entryComponents: [NgAisQueryRuleCustomData],
-  exports: [NgAisQueryRuleCustomData],
-  imports: [CommonModule],
+    declarations: [NgAisQueryRuleCustomData],
+    exports: [NgAisQueryRuleCustomData],
+    imports: [CommonModule]
 })
 export class NgAisQueryRuleCustomDataModule {}

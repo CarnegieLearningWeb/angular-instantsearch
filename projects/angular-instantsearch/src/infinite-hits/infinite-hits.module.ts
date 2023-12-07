@@ -5,9 +5,8 @@ import { NgAisHighlightModule } from '../highlight/highlight.module';
 import { NgAisInfiniteHits } from './infinite-hits';
 
 @NgModule({
-  declarations: [NgAisInfiniteHits],
-  entryComponents: [NgAisInfiniteHits],
-  exports: [NgAisInfiniteHits],
-  imports: [CommonModule, NgAisHighlightModule],
+    declarations: [NgAisInfiniteHits],
+    exports: [NgAisInfiniteHits],
+    imports: [CommonModule, NgAisHighlightModule]
 })
 export class NgAisInfiniteHitsModule {}
