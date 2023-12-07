@@ -1,9 +1,9 @@
 import { createSSRSearchClient } from '../create-ssr-search-client';
 import algoliasearch from 'algoliasearch-v3';
 import { VERSION } from '../version';
-import { VERSION as AngularVersion } from '@angular/core';
+import { VERSION as AngularVersion, makeStateKey, TransferState } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TransferState, makeStateKey } from '@angular/platform-browser';
+
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 
 jest.mock('algoliasearch/lite', () => {

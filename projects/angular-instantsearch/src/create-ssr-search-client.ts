@@ -1,8 +1,8 @@
 import * as algoliasearchProxy from 'algoliasearch/lite';
 import * as encodeProxy from 'querystring-es3/encode';
-import { VERSION as AngularVersion } from '@angular/core';
+import { VERSION as AngularVersion, StateKey, TransferState } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TransferState, StateKey } from '@angular/platform-browser';
+
 import { VERSION } from './version';
 
 type SSRSearchClientOptions = {

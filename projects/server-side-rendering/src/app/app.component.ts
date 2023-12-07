@@ -1,5 +1,5 @@
-import { Component, Inject, Optional } from '@angular/core';
-import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { Component, Inject, Optional, makeStateKey, TransferState } from '@angular/core';
+
 import { createSSRSearchClient } from 'angular-instantsearch';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
