@@ -5,9 +5,8 @@ import { NgAisPanel } from './panel';
 export { NgAisPanel } from './panel';
 
 @NgModule({
-  declarations: [NgAisPanel],
-  entryComponents: [NgAisPanel],
-  exports: [NgAisPanel],
-  imports: [CommonModule],
+    declarations: [NgAisPanel],
+    exports: [NgAisPanel],
+    imports: [CommonModule]
 })
 export class NgAisPanelModule {}

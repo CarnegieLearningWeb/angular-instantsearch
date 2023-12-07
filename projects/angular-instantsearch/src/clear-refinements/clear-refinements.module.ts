@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgAisClearRefinements } from './clear-refinements';
 
 @NgModule({
-  declarations: [NgAisClearRefinements],
-  entryComponents: [NgAisClearRefinements],
-  exports: [NgAisClearRefinements],
-  imports: [CommonModule],
+    declarations: [NgAisClearRefinements],
+    exports: [NgAisClearRefinements],
+    imports: [CommonModule]
 })
 export class NgAisClearRefinementsModule {}
