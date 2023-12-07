@@ -42,7 +42,7 @@ import {
           spellcheck="false"
           type="text"
           [value]="query"
-          (input)="handleChange($event.target.value)"
+          (input)="handleChange($any($event.target).value)"
           (focus)="focus.emit($event)"
           (blur)="blur.emit($event)"
           #searchBox

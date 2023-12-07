@@ -1,4 +1,4 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
+import { Directive, Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
@@ -16,6 +16,7 @@ export type Connector = (
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
+@Directive()
 export abstract class BaseWidget<TState extends Record<string, unknown> = {}>
   implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;

@@ -56,13 +56,13 @@
             "main": "projects/e-commerce/src/main.ts",
             "polyfills": "projects/e-commerce/src/polyfills.ts",
             "tsConfig": "projects/e-commerce/tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
+            "inlineStyleLanguage": "css",
             "assets": [
               "projects/e-commerce/src/favicon.ico",
               "projects/e-commerce/src/assets"
             ],
             "styles": [
-              "projects/e-commerce/src/styles.sass"
+              "projects/e-commerce/src/theme.css"
             ],
             "scripts": []
           },

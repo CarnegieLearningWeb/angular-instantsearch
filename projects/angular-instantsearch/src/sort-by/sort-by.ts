@@ -27,7 +27,7 @@ export {
     <div [class]="cx()">
       <select
         [class]="cx('select')"
-        (change)="state.refine($event.target.value)"
+        (change)="state.refine($any($event.target).value)"
       >
         <option
           [class]="cx('option')"

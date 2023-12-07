@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { Directive, OnDestroy, OnInit } from '@angular/core';
 import { bem } from '../utils';
 import {
   Widget,
@@ -8,6 +8,7 @@ import {
   UnknownWidgetParams,
 } from 'instantsearch.js/es/types';
 
+@Directive()
 export class TypedBaseWidget<
   TWidgetDescription extends WidgetDescription,
   TConnectorParams extends UnknownWidgetParams

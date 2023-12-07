@@ -1,12 +1,13 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
-import { bem } from '../utils';
+import { Directive, OnDestroy, OnInit } from '@angular/core';
 import { Widget } from 'instantsearch.js';
+import { bem } from '../utils';
 
 export type Connector = (
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
+@Directive()
 export class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;

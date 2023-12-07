@@ -19,7 +19,7 @@ import { bem } from '../utils';
           spellcheck="false"
           type="text"
           [value]="searchQuery"
-          (input)="handleChange($event.target.value)"
+          (input)="handleChange($any($event.target).value)"
         />
 
         <button
