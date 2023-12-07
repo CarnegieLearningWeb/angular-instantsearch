@@ -102,6 +102,15 @@
         ],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "projects/e-commerce/**/*.ts",
+          "projects/e-commerce/**/*.html"
+        ]
+      }
     }
   }
 }

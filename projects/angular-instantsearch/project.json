@@ -30,6 +30,15 @@
         "tsConfig": "projects/angular-instantsearch/tsconfig.spec.json",
         "karmaConfig": "projects/angular-instantsearch/karma.conf.js"
       }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "projects/angular-instantsearch/**/*.ts",
+          "projects/angular-instantsearch/**/*.html"
+        ]
+      }
     }
   }
 }
