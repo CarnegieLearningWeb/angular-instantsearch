@@ -1,8 +1,8 @@
 import { createSSRSearchClient } from '../create-ssr-search-client';
 import algoliasearch from 'algoliasearch';
 import { VERSION } from '../version';
-import { VERSION as AngularVersion } from '@angular/core';
-import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { VERSION as AngularVersion, makeStateKey, TransferState } from '@angular/core';
+
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
