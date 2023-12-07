@@ -1,10 +1,10 @@
 <ais-instantsearch [config]="config">
   <ais-configure
-    [searchParameters]="{
+    [searchParameters]="$any({
       attributesToSnippet: ['description:10'],
       snippetEllipsisText: '…',
       removeWordsIfNoResults: 'allOptional'
-    }"
+    })"
   >
   </ais-configure>
   <header class="header" id="header">
