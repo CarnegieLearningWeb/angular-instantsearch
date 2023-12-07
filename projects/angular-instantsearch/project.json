@@ -24,11 +24,10 @@
       ]
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/projects/angular-instantsearch"],
       "options": {
-        "main": "projects/angular-instantsearch/src/test.ts",
-        "tsConfig": "projects/angular-instantsearch/tsconfig.spec.json",
-        "karmaConfig": "projects/angular-instantsearch/karma.conf.js"
+        "jestConfig": "projects/angular-instantsearch/jest.config.ts"
       }
     },
     "lint": {

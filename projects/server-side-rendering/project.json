@@ -86,21 +86,10 @@
       }
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/projects/server-side-rendering"],
       "options": {
-        "main": "projects/server-side-rendering/src/test.ts",
-        "polyfills": "projects/server-side-rendering/src/polyfills.ts",
-        "tsConfig": "projects/server-side-rendering/tsconfig.spec.json",
-        "karmaConfig": "projects/server-side-rendering/karma.conf.js",
-        "inlineStyleLanguage": "sass",
-        "assets": [
-          "projects/server-side-rendering/src/favicon.ico",
-          "projects/server-side-rendering/src/assets"
-        ],
-        "styles": [
-          "projects/server-side-rendering/src/styles.sass"
-        ],
-        "scripts": []
+        "jestConfig": "projects/server-side-rendering/jest.config.ts"
       }
     },
     "lint": {
