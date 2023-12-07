@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgAisVoiceSearch } from './voice-search';
 
 @NgModule({
-  declarations: [NgAisVoiceSearch],
-  entryComponents: [NgAisVoiceSearch],
-  exports: [NgAisVoiceSearch],
-  imports: [CommonModule],
+    declarations: [NgAisVoiceSearch],
+    exports: [NgAisVoiceSearch],
+    imports: [CommonModule]
 })
 export class NgAisVoiceSearchModule {}

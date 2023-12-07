@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgAisQueryRuleContext } from './query-rule-context';
 
 @NgModule({
-  declarations: [NgAisQueryRuleContext],
-  entryComponents: [NgAisQueryRuleContext],
-  exports: [NgAisQueryRuleContext],
-  imports: [CommonModule],
+    declarations: [NgAisQueryRuleContext],
+    exports: [NgAisQueryRuleContext],
+    imports: [CommonModule]
 })
 export class NgAisQueryRuleContextModule {}
