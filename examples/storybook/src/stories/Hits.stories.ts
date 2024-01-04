@@ -39,7 +39,10 @@ storiesOf('Hits', module)
       `,
       methods: {
         transformItems: (items: Hit[]) =>
-          items.map(item => ({ ...item, name: `${item.name} (transformed)` })),
+          items.map((item) => ({
+            ...item,
+            name: `${item.name} (transformed)`,
+          })),
       },
     }),
   }))

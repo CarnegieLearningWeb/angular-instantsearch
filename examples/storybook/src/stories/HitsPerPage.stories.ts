@@ -35,7 +35,7 @@ storiesOf('HitsPerPage', module)
   }))
   .add('with transformItems', () => {
     const transformItems = (items: HitsPerPageConnectorParamsItem[]) =>
-      items.map(item => ({ ...item, label: `${item.label} (transformed)` }));
+      items.map((item) => ({ ...item, label: `${item.label} (transformed)` }));
     return {
       component: wrapWithHits({
         template: `

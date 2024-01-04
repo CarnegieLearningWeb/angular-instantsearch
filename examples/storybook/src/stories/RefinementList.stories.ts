@@ -66,7 +66,7 @@ storiesOf('RefinementList', module)
       `,
       methods: {
         transformItems: (items: RefinementListItem[]) =>
-          items.map(item => {
+          items.map((item) => {
             if (item.highlighted) {
               item.highlighted = item.highlighted
                 .replace(/(\d+) - (\d+)/, '$$$1 - $$$2')

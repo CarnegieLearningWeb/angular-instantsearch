@@ -22,23 +22,21 @@ import {
 @Component({
   selector: 'ais-menu-select',
   template: `
-    <select
-      class="menu-select"
-      (change)="state.refine($event.target.value)"
-    >
+    <select class="menu-select" (change)="state.refine($event.target.value)">
       <option
         *ngFor="let item of state.items"
         [value]="item.value"
         [selected]="item.isRefined"
       >
-        {{item.label}}
+        {{ item.label }}
       </option>
     </select>
   `,
 })
 export class MenuSelect
   extends TypedBaseWidget<MenuWidgetDescription, MenuConnectorParams>
-  implements OnInit {
+  implements OnInit
+{
   public state: MenuRenderState = {
     items: [],
     refine: () => {},
@@ -76,8 +74,8 @@ type NoopWidgetDescription = {
 const connectNoop: Connector<
   NoopWidgetDescription,
   Record<string, unknown>
-> = function(renderFn, unmountFn = () => {}) {
-  return function(widgetParams) {
+> = function (renderFn, unmountFn = () => {}) {
+  return function (widgetParams) {
     return {
       $$type: 'demo.noop',
       init: ({ instantSearchInstance }) => {
@@ -105,18 +103,12 @@ const connectNoop: Connector<
 
 @Component({
   selector: 'ais-refresh',
-  template: `
-    <button
-      class="refresh"
-      (click)="refresh()"
-    >
-      refresh
-    </button>
-  `,
+  template: ` <button class="refresh" (click)="refresh()">refresh</button> `,
 })
 export class Refresh
   extends TypedBaseWidget<NoopWidgetDescription, Record<string, unknown>>
-  implements OnInit {
+  implements OnInit
+{
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()

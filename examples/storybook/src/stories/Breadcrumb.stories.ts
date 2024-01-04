@@ -30,7 +30,7 @@ storiesOf('Breadcrumb', module)
       },
       methods: {
         transformItems: (items: BreadcrumbConnectorParamsItem[]) =>
-          items.map(item => ({
+          items.map((item) => ({
             ...item,
             label: `${item.label} (transformed)`,
           })),

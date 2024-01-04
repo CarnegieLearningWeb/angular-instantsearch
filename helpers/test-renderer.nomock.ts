@@ -21,7 +21,7 @@ export function createRenderer({
   defaultState?: {};
   methods?: {};
 }) {
-  return function(state?: {}, isFirstRender = false) {
+  return function (state?: {}, isFirstRender = false) {
     return render(
       {
         template,
@@ -56,9 +56,7 @@ function render(
 ) {
   @Component({
     template: `
-      <ais-instantsearch [config]="config">
-        ${template}
-      </ais-instantsearch>
+      <ais-instantsearch [config]="config"> ${template} </ais-instantsearch>
     `,
   })
   class TestContainer {
@@ -74,7 +72,7 @@ function render(
     };
     @ViewChild(TestedWidget) testedWidget;
     constructor() {
-      Object.keys(methods).forEach(methodName => {
+      Object.keys(methods).forEach((methodName) => {
         this[methodName] = methods[methodName];
       });
     }

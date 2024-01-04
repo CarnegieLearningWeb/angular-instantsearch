@@ -34,9 +34,9 @@ If applicable, add screenshots to help explain your problem.
 
 **Environment:**
 
- - OS: [e.g. iOS / windows / mac / android]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+- OS: [e.g. iOS / windows / mac / android]
+- Browser [e.g. chrome, safari]
+- Version [e.g. 22]
 
 **Additional context**
 

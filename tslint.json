@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "tslint-config-airbnb",
-    "tslint-config-prettier"
-  ],
-  "rulesDirectory": [
-    "tslint-plugin-prettier"
-  ],
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
     "prettier": true,
     "no-submodule-imports": false,
@@ -13,9 +8,6 @@
     "object-shorthand-properties-first": false
   },
   "cliOptions": {
-    "exclude": [
-      "node_modules",
-      "dist"
-    ]
+    "exclude": ["node_modules", "dist"]
   }
 }

@@ -1,0 +1,91 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx", "tsdoc"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "eqeqeq": "warn",
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "util:shared",
+                "onlyDependOnLibsWithTags": ["util:shared"]
+              },
+              {
+                "sourceTag": "data-access:core",
+                "onlyDependOnLibsWithTags": ["util:*"]
+              },
+              {
+                "sourceTag": "data-access:client",
+                "onlyDependOnLibsWithTags": ["util:*", "data-access:core", "data-access:client"]
+              },
+              {
+                "sourceTag": "data-access:impl",
+                "onlyDependOnLibsWithTags": ["util:*", "data-access:core", "data-access:impl"]
+              },
+              {
+                "sourceTag": "data-access:client-impl",
+                "onlyDependOnLibsWithTags": ["util:*", "data-access:*"]
+              },
+              {
+                "sourceTag": "feature:*",
+                "onlyDependOnLibsWithTags": ["util:*", "data-access:*", "feature:*"]
+              },
+              {
+                "sourceTag": "app",
+                "onlyDependOnLibsWithTags": ["util:shared", "data-access:*", "feature:*"]
+              },
+              {
+                "sourceTag": "agnostic",
+                "notDependOnLibsWithTags": ["frontend", "backend"],
+                "bannedExternalImports": ["axios", "@angular/*", "@nestjs/*", "@aws-sdk"]
+              },
+              {
+                "sourceTag": "frontend",
+                "notDependOnLibsWithTags": ["backend"],
+                "bannedExternalImports": ["axios", "@nestjs/*", "@aws-sdk", "paseto"]
+              },
+              {
+                "sourceTag": "backend",
+                "notDependOnLibsWithTags": ["frontend"],
+                "bannedExternalImports": ["@angular/*", "@ngneat/*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "tsdoc/syntax": "warn"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "args": "after-used",
+            // match what the ts compiler does
+            "argsIgnorePattern": "^_.*$", // Ignore unused parameters that start with an underscore
+            "varsIgnorePattern": "^_.*$" // Ignore unused variables that start with an underscore
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
