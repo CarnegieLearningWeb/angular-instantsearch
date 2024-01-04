@@ -21,6 +21,13 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/karma.conf.js"],
       "cache": true
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "options": {
+        "maxWarnings": 0
+      },
+      "cache": true
     }
   }
 }

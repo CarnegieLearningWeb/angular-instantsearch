@@ -72,7 +72,7 @@ describe('QueryRuleCustomData', () => {
   it('passes transformItems', () => {
     const transformItems = 'transformItems';
 
-    const fixture = render(
+    const _fixture = render(
       `<ais-query-rule-custom-data
           [transformItems]="'${transformItems}'"
         >

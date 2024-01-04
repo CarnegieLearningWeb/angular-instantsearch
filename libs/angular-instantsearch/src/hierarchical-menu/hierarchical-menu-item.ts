@@ -63,7 +63,7 @@ export class NgAisHierarchicalMenuItem {
     )}`;
   }
 
-  public isArray(potentialArray: any): boolean {
+  public isArray(potentialArray: unknown): boolean {
     return Array.isArray(potentialArray);
   }
 

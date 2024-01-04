@@ -29,10 +29,10 @@ export type RatingMenuItem = {
 };
 
 export type RatingMenuState = {
-  createURL: Function;
+  createURL: typeof noop | ((x: string) => string);
   hasNoResults: boolean;
   items: RatingMenuItem[];
-  refine: Function;
+  refine: typeof noop | ((x: string) => void);
 };
 
 @Component({

@@ -95,6 +95,10 @@
         "styles": ["apps/e-commerce/src/styles.sass"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

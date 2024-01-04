@@ -16,15 +16,15 @@ export class TypedBaseWidget<
 {
   public widget?: Widget;
   public state?: object;
-  public cx?: Function;
+  public cx?: ReturnType<typeof bem>;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
   }
 
   public createWidget(
-    connector: Connector<TWidgetDescription, TConnectorParams>,
-    options: TConnectorParams
+    _connector: Connector<TWidgetDescription, TConnectorParams>,
+    _options: TConnectorParams
   ) {
     // nothing to do, test env
   }
@@ -40,7 +40,7 @@ export class TypedBaseWidget<
   public updateState: Renderer<
     TWidgetDescription['renderState'],
     TConnectorParams
-  > = (state, isFirstRendering) => {
+  > = (state, _isFirstRendering) => {
     this.state = state;
   };
 

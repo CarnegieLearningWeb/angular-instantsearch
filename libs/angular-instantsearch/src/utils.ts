@@ -16,7 +16,7 @@ export function parseNumberInput(input?: number | string) {
   return typeof input === 'string' ? parseInt(input, 10) : input;
 }
 
-export function noop(...args: any[]): void {}
+export function noop(..._args: unknown[]): void {}
 
 export function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
@@ -48,7 +48,7 @@ export function range({
 }
 
 // See https://github.com/algolia/react-instantsearch/blob/86dfe8674d566124af55a8f044051d0062786c1a/packages/react-instantsearch-core/src/core/utils.ts#L138-L142
-export function getPropertyByPath(object: object, path: string): any {
+export function getPropertyByPath(object: object, path: string): unknown {
   return path
     .replace(/\[(\d+)]/g, '.$1')
     .split('.')

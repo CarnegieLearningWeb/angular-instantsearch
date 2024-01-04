@@ -6,7 +6,7 @@ import {
   TransferState,
 } from '@angular/core';
 
-import { createSSRSearchClient } from 'angular-instantsearch';
+import { createSSRSearchClient, InstantSearchConfig } from 'angular-instantsearch';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
 import { history } from 'instantsearch.js/es/lib/routers';
@@ -19,7 +19,7 @@ import { Request } from 'express';
 })
 export class AppComponent {
   title = 'server-side-rendering';
-  config: any;
+  config: InstantSearchConfig;
 
   constructor(
     private httpClient: HttpClient,

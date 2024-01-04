@@ -58,7 +58,7 @@ import { bem } from '../utils';
 })
 export class NgAisFacetsSearch {
   @Input() public searchPlaceholder: string;
-  @Input() public search: Function;
+  @Input() public search: (query: string) => unknown;
 
   public cx = bem('SearchBox');
 

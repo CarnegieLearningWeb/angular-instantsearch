@@ -122,8 +122,8 @@ export class NgAisRangeInput extends TypedBaseWidget<
     super.ngOnInit();
   }
 
-  public handleChange(event: any, type: string) {
-    const value = parseNumberInput(event.target.value);
+  public handleChange(event: Event, type: string) {
+    const value = parseNumberInput((event.target as HTMLInputElement).value);
 
     if (type === 'min') {
       this.minInputValue = value;

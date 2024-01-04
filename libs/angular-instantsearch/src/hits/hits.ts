@@ -40,7 +40,7 @@ export class NgAisHits extends TypedBaseWidget<
   HitsConnectorParams
 > {
   @ContentChild(TemplateRef, { static: false })
-  public template?: TemplateRef<any>;
+  public template?: TemplateRef<unknown>;
 
   @Input() public escapeHTML?: HitsConnectorParams['escapeHTML'];
   @Input() public transformItems?: HitsConnectorParams['transformItems'];

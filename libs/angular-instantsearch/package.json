@@ -3,7 +3,12 @@
   "version": "4.4.1",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
-    "@angular/core": "^17.0.0"
+    "@angular/core": "^17.0.0",
+    "algoliasearch": "4.10.3",
+    "algoliasearch-helper": "3.8.3",
+    "instantsearch.js": "^4.48.1",
+    "nouislider": "^10.0.0",
+    "querystring-es3": "^0.2.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"

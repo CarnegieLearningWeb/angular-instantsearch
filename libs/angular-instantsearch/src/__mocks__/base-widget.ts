@@ -11,13 +11,13 @@ export type Connector = (
 export class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;
-  public cx?: Function;
+  public cx?: ReturnType<typeof bem>;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
   }
 
-  public createWidget(connector: Connector, options: object = {}) {
+  public createWidget(connector: Connector, _options: object = {}) {
     // nothing to do, test env
   }
 
@@ -29,7 +29,7 @@ export class BaseWidget implements OnInit, OnDestroy {
     // nothing to do, test env
   }
 
-  public updateState = (state, isFirstRendering): Promise<void> | void => {
+  public updateState = (state, _isFirstRendering): Promise<void> | void => {
     this.state = state;
   };
 

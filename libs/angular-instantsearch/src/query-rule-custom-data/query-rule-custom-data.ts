@@ -39,7 +39,7 @@ export class NgAisQueryRuleCustomData extends TypedBaseWidget<
   QueryRulesConnectorParams
 > {
   @ContentChild(TemplateRef, { static: false })
-  public template: any;
+  public template: TemplateRef<unknown>;
 
   @Input() public transformItems?: QueryRulesConnectorParams['transformItems'];
 

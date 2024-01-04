@@ -1,10 +1,6 @@
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisRatingMenu } from '../rating-menu';
 
-import { bem } from '../../utils';
-
-const cx = bem('StarRating');
-
 const defaultState = {
   createURL: jest.fn(),
   hasNoResults: false,

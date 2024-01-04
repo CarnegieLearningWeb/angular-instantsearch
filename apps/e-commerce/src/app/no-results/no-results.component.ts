@@ -10,7 +10,7 @@ import { connectHits } from 'instantsearch.js/es/connectors';
 export type NoResultsState = {
   results?: {
     nbHits: number;
-    getRefinements: () => any[];
+    getRefinements: () => unknown[];
   };
 };
 

@@ -6,59 +6,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "eqeqeq": "warn",
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "util:shared",
-                "onlyDependOnLibsWithTags": ["util:shared"]
-              },
-              {
-                "sourceTag": "data-access:core",
-                "onlyDependOnLibsWithTags": ["util:*"]
-              },
-              {
-                "sourceTag": "data-access:client",
-                "onlyDependOnLibsWithTags": ["util:*", "data-access:core", "data-access:client"]
-              },
-              {
-                "sourceTag": "data-access:impl",
-                "onlyDependOnLibsWithTags": ["util:*", "data-access:core", "data-access:impl"]
-              },
-              {
-                "sourceTag": "data-access:client-impl",
-                "onlyDependOnLibsWithTags": ["util:*", "data-access:*"]
-              },
-              {
-                "sourceTag": "feature:*",
-                "onlyDependOnLibsWithTags": ["util:*", "data-access:*", "feature:*"]
-              },
-              {
-                "sourceTag": "app",
-                "onlyDependOnLibsWithTags": ["util:shared", "data-access:*", "feature:*"]
-              },
-              {
-                "sourceTag": "agnostic",
-                "notDependOnLibsWithTags": ["frontend", "backend"],
-                "bannedExternalImports": ["axios", "@angular/*", "@nestjs/*", "@aws-sdk"]
-              },
-              {
-                "sourceTag": "frontend",
-                "notDependOnLibsWithTags": ["backend"],
-                "bannedExternalImports": ["axios", "@nestjs/*", "@aws-sdk", "paseto"]
-              },
-              {
-                "sourceTag": "backend",
-                "notDependOnLibsWithTags": ["frontend"],
-                "bannedExternalImports": ["@angular/*", "@ngneat/*"]
-              }
-            ]
-          }
-        ]
+        "eqeqeq": "warn"
       }
     },
     {
@@ -86,6 +34,22 @@
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
       "rules": {}
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredDependencies": [
+              "@angular/platform-browser-dynamic",
+              "tslib",
+              "zone.js"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

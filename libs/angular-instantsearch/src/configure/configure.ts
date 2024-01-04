@@ -30,6 +30,7 @@ export class NgAisConfigure extends TypedBaseWidget<
   // instance options
   private internalSearchParameters: ConfigureConnectorParams['searchParameters'];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private differ: KeyValueDiffer<string, any>;
 
   public state: ConfigureRenderState = {

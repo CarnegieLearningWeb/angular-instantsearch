@@ -1,14 +1,14 @@
-import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
+import { Component, Inject, Input, Optional, forwardRef } from '@angular/core';
 import { connectPagination } from 'instantsearch.js/es/connectors';
-import { TypedBaseWidget } from '../typed-base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { NgAisIndex } from '../index-widget/index-widget';
-import { parseNumberInput, noop, range } from '../utils';
 import {
   PaginationConnectorParams,
-  PaginationWidgetDescription,
   PaginationRenderState,
+  PaginationWidgetDescription,
 } from 'instantsearch.js/es/connectors/pagination/connectPagination';
+import { NgAisIndex } from '../index-widget/index-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { noop, parseNumberInput } from '../utils';
 
 export { PaginationConnectorParams, PaginationRenderState };
 

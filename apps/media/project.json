@@ -89,6 +89,10 @@
         "styles": ["apps/media/src/styles.scss"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

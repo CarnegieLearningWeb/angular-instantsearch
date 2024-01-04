@@ -31,8 +31,7 @@ describe('InstantSearch', () => {
       };
     }
 
-    TestBed.configureCompiler({ preserveWhitespaces: true } as any)
-      .configureTestingModule({
+    TestBed.configureTestingModule({
         imports: [NgAisInstantSearchModule.forRoot()],
         declarations: [TestContainer],
       })
@@ -66,8 +65,7 @@ describe('InstantSearch', () => {
       };
     }
 
-    TestBed.configureCompiler({ preserveWhitespaces: true } as any)
-      .configureTestingModule({
+    TestBed.configureTestingModule({
         imports: [NgAisInstantSearchModule.forRoot()],
         declarations: [TestContainer],
       })

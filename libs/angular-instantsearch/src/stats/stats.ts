@@ -36,7 +36,7 @@ export class NgAisStats extends TypedBaseWidget<
   StatsConnectorParams
 > {
   @ContentChild(TemplateRef, { static: false })
-  public template: any;
+  public template: TemplateRef<unknown>;
 
   public state: StatsRenderState = {
     nbHits: 0,

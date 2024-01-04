@@ -17,7 +17,7 @@ export type Connector = (
 ) => (widgetOptions?: object) => Widget;
 
 @Directive()
-export abstract class BaseWidget<TState extends Record<string, unknown> = {}>
+export abstract class BaseWidget<TState extends Record<string, unknown>>
   implements OnInit, OnDestroy
 {
   @Input() public autoHideContainer?: boolean;
@@ -75,7 +75,7 @@ export abstract class BaseWidget<TState extends Record<string, unknown> = {}>
 
   /**
    * Helper to generate class names for an item
-   * @param item element to generate a class name for
+   * @param item - element to generate a class name for
    */
   public getItemClass(item: { isRefined?: boolean }) {
     const className = this.cx('item');

@@ -95,6 +95,10 @@
         "styles": ["apps/server-side-rendering/src/styles.css"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

@@ -64,7 +64,7 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
   InfiniteHitsConnectorParams
 > {
   @ContentChild(TemplateRef, { static: false })
-  public template?: any;
+  public template?: TemplateRef<unknown>;
 
   // rendering options
   @Input() public escapeHTML: InfiniteHitsConnectorParams['escapeHTML'];

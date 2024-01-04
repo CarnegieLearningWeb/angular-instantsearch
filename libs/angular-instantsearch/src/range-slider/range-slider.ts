@@ -1,25 +1,26 @@
 import {
   Component,
-  Input,
-  ViewChild,
+  ElementRef,
   Inject,
-  forwardRef,
+  Input,
   Optional,
+  ViewChild,
+  forwardRef
 } from '@angular/core';
 
 import { connectRange } from 'instantsearch.js/es/connectors';
 import * as noUiSlider from 'nouislider';
 
-import { TypedBaseWidget } from '../typed-base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { NgAisIndex } from '../index-widget/index-widget';
-import { parseNumberInput, noop } from '../utils';
 import {
   RangeBoundaries,
   RangeConnectorParams,
-  RangeWidgetDescription,
   RangeRenderState,
+  RangeWidgetDescription,
 } from 'instantsearch.js/es/connectors/range/connectRange';
+import { NgAisIndex } from '../index-widget/index-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { noop, parseNumberInput } from '../utils';
 
 @Component({
   selector: 'ais-range-slider',
@@ -36,7 +37,7 @@ export class NgAisRangeSlider extends TypedBaseWidget<
   RangeConnectorParams
 > {
   @ViewChild('sliderContainer', { static: false })
-  public sliderContainer: any;
+  public sliderContainer: ElementRef<HTMLDivElement>;
 
   // rendering options
   @Input() public pips: boolean = true;
@@ -60,7 +61,7 @@ export class NgAisRangeSlider extends TypedBaseWidget<
     sendEvent: noop,
   };
 
-  private slider: any;
+  private slider?: noUiSlider.noUiSlider;
 
   get step() {
     // compute step from the precision value
@@ -131,7 +132,8 @@ export class NgAisRangeSlider extends TypedBaseWidget<
       );
 
       // register listen events
-      this.sliderContainer.nativeElement.noUiSlider.on(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (this.sliderContainer.nativeElement as any).noUiSlider.on(
         'change',
         this.handleChange
       );

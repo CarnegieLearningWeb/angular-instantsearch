@@ -34,6 +34,7 @@ const algoliasearch = (
   typeof algoliasearchProxy.default === 'function'
     ? algoliasearchProxy.default
     : algoliasearchProxy
+// eslint-disable-next-line @typescript-eslint/ban-types
 ) as typeof algoliasearchProxy.default extends Function
   ? typeof algoliasearchProxy.default
   : typeof algoliasearchProxy;
@@ -108,6 +109,7 @@ export function createSSRSearchClient({
   searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
   searchClient.addAlgoliaAgent(`angular-instantsearch-server (${VERSION})`);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (searchClient as any)._request = (
     rawUrl: string,
     options: RequestOptions

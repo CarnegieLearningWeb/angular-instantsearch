@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */ // embedded algiolasearch-helper conflicts with local algoliasearch-helper
 import {
   AfterViewInit,
   Component,
@@ -21,7 +22,7 @@ export { SearchClient, Hit } from 'instantsearch.js/es/types';
 export { PlainSearchParameters as SearchParameters } from 'algoliasearch-helper';
 
 // this is needed for different webpack/typescript configurations
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
+const _algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type FacetSortByStringOptions =
   | 'count'
@@ -51,6 +52,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
 
   public instantSearchInstance: InstantSearchInstance;
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(@Inject(PLATFORM_ID) public platformId: Object) {}
 
   public ngOnInit() {

@@ -77,7 +77,7 @@ export abstract class TypedBaseWidget<
 
   /**
    * Helper to generate class names for an item
-   * @param item element to generate a class name for
+   * @param item - element to generate a class name for
    */
   public getItemClass(item: { isRefined?: boolean }): string {
     const className = this.cx('item');
