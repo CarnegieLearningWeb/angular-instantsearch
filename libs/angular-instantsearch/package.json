@@ -1,11 +1,11 @@
 {
-  "name": "angular-instantsearch",
-  "version": "4.4.1",
+  "name": "@carnegie-learning/angular-instantsearch",
+  "version": "5.0.1",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0",
-    "algoliasearch": "4.10.3",
-    "algoliasearch-helper": "3.8.3",
+    "algoliasearch": "^4.22.1",
+    "algoliasearch-helper": "^3.16.3",
     "instantsearch.js": "^4.48.1",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
