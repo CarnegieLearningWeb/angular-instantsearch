@@ -12,9 +12,16 @@ Run `ng generate component component-name --project angular-instantsearch` to ge
 
 Run `ng build angular-instantsearch` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+## Publishing (deprecated)
 
 After building your library with `ng build angular-instantsearch`, go to the dist folder `cd dist/angular-instantsearch` and run `npm publish`.
+
+## Publishing to Nexus and Code Artifact
+
+You need to manually bump the npmVersion number in the pom.xml
+
+- Run `mvn clean install` to install all dependencies
+- Run `mvn deploy` to trigger both `npm publish` commands (npm-publish-nexus and npm-publish-codeartifact), first to Nexus and then to Code Artifact.
 
 ## Running unit tests
 
