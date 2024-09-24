@@ -66,19 +66,15 @@ export function wrapWithHits({
     template: `
       <ais-instantsearch [config]="config">
         <ais-configure [searchParameters]="searchParameters"></ais-configure>
-        <div class="ais-container ais-container-preview">
-          ${template}
-        </div>
+        <div class="ais-container ais-container-preview">${template}</div>
         <div class="ais-container ais-container-playground">
-          <div class="panel-left">
-            ${filters}
-          </div>
+          <div class="panel-left">${filters}</div>
           <div class="panel-right">
-            <ais-search-box placeholder="Search into furniture"></ais-search-box>
+            <ais-search-box
+              placeholder="Search into furniture"
+            ></ais-search-box>
             <ais-stats></ais-stats>
-            <ais-hits>
-              ${hits}
-            </ais-hits>
+            <ais-hits> ${hits} </ais-hits>
             <ais-pagination [totalPages]="20"></ais-pagination>
           </div>
         </div>
@@ -100,7 +96,7 @@ export function wrapWithHits({
     };
 
     constructor() {
-      Object.keys(methods).forEach(methodName => {
+      Object.keys(methods).forEach((methodName) => {
         (this as any)[methodName] = methods[methodName];
       });
     }

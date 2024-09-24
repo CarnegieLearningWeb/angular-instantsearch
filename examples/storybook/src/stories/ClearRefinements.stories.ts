@@ -30,7 +30,7 @@ storiesOf('ClearRefinements', module)
   }))
   .add('with transformItems', () => {
     const transformItems = (items: string[]) =>
-      items.filter(item => item !== 'brand');
+      items.filter((item) => item !== 'brand');
 
     return {
       component: wrapWithHits({

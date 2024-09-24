@@ -34,7 +34,7 @@ storiesOf('SortBy', module)
     `,
       methods: {
         transformItems: (items: SortByItem[]) => {
-          return items.map(item => ({
+          return items.map((item) => ({
             ...item,
             label: `${item.label} (transformed)`,
           }));

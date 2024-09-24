@@ -26,7 +26,7 @@ storiesOf('NumericMenu', module)
   }))
   .add('with transformItems', () => {
     const transformItems = (items: NumericMenuConnectorParamsItem[]) => {
-      return items.map(item => ({
+      return items.map((item) => ({
         ...item,
         label: `${item.label} (transformed)`,
       }));

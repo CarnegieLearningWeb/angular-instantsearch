@@ -59,7 +59,7 @@ storiesOf('HierarchicalMenu', module)
     const transformItems = (
       items: HierarchicalMenuItem[]
     ): HierarchicalMenuItem[] =>
-      items.map(item => ({
+      items.map((item) => ({
         ...item,
         label: `${item.label} (transformed)`,
         data: item.data ? transformItems(item.data) : null,

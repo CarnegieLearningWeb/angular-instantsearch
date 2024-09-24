@@ -140,7 +140,7 @@ storiesOf('QueryRuleCustomData', module)
       </ais-query-rule-custom-data>`,
       methods: {
         transformItems: (items: CustomDataItem[]) =>
-          items.filter(item => Boolean(item.banner)),
+          items.filter((item) => Boolean(item.banner)),
       },
     }),
   }));

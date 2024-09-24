@@ -1,0 +1,36 @@
+{
+  "name": "angular-instantsearch",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/angular-instantsearch/src",
+  "prefix": "lib",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "options": {
+        "project": "libs/angular-instantsearch/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-instantsearch/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-instantsearch/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/angular-instantsearch/src/test.ts",
+        "tsConfig": "libs/angular-instantsearch/tsconfig.spec.json",
+        "karmaConfig": "libs/angular-instantsearch/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}
