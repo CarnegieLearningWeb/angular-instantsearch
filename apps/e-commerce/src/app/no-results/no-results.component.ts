@@ -113,9 +113,7 @@ export type NoResultsState = {
   `,
     standalone: false
 })
-export class NoResults extends BaseWidget {
-  public state: NoResultsState = {};
-
+export class NoResults extends BaseWidget<NoResultsState> {
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()

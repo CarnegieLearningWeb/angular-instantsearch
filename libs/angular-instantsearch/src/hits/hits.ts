@@ -49,8 +49,9 @@ export class NgAisHits extends TypedBaseWidget<
   public state: HitsRenderState = {
     hits: [],
     results: undefined,
-    bindEvent: undefined,
-    sendEvent: undefined,
+    items: [],
+    sendEvent: () => {},
+    bindEvent: () => '',
   };
 
   constructor(

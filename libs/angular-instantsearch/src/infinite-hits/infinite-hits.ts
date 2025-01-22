@@ -82,6 +82,7 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
     currentPageHits: [],
     isFirstPage: false,
     isLastPage: false,
+    items: [],
     showMore: noop,
     showPrevious: noop,
     sendEvent: noop,

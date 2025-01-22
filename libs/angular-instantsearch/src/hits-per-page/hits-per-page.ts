@@ -44,6 +44,7 @@ export class NgAisHitsPerPage extends TypedBaseWidget<
     refine: noop,
     hasNoResults: true, // TODO: disable <select> when true
     canRefine: false,
+    createURL: () => '#',
   };
 
   get isHidden(): boolean {

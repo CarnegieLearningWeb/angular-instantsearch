@@ -51,7 +51,7 @@ export class NgAisSortBy extends TypedBaseWidget<
   public transformItems?: <U extends SortByItem>(items: SortByItem[]) => U[];
 
   public state: SortByRenderState = {
-    currentRefinement: null,
+    currentRefinement: '',
     options: [],
     refine: noop,
     hasNoResults: false,

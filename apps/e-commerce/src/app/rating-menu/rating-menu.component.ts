@@ -85,7 +85,7 @@ export type RatingMenuState = {
   `,
     standalone: false
 })
-export class RatingMenu extends BaseWidget {
+export class RatingMenu extends BaseWidget<RatingMenuState> {
   // rendering options
   @ContentChild('starSvg', { read: true, static: true })
   starSvg: TemplateRef<ElementRef>;

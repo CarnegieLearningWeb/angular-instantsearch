@@ -55,10 +55,16 @@ export class NgAisIndex implements OnInit, OnDestroy {
   }
 
   public addWidgets(widgets: Widget[]) {
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
     this.widget.addWidgets(widgets);
   }
 
   public removeWidgets(widgets: Widget[]) {
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
     this.widget.removeWidgets(widgets);
   }
 
