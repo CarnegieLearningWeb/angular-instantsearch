@@ -94,7 +94,7 @@
     "instantsearch.js": "^4.48.1",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1",
-    "rxjs": "~6.6.0",
+    "rxjs": "^7.8.1",
     "tslib": "^2.3.0",
     "zone.js": "0.15.0"
   },
