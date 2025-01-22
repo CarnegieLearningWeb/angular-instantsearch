@@ -17,8 +17,9 @@ import indexWidget, {
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'ais-index',
-  template: `<ng-content></ng-content>`,
+    selector: 'ais-index',
+    template: `<ng-content></ng-content>`,
+    standalone: false
 })
 export class NgAisIndex implements OnInit, OnDestroy {
   @Input() public indexName: IndexWidgetParams['indexName'];

@@ -10,8 +10,9 @@ import {
 } from 'instantsearch.js/es/connectors/query-rules/connectQueryRules';
 
 @Component({
-  selector: 'ais-query-rule-context',
-  template: '',
+    selector: 'ais-query-rule-context',
+    template: '',
+    standalone: false
 })
 export class NgAisQueryRuleContext extends TypedBaseWidget<
   QueryRulesWidgetDescription,

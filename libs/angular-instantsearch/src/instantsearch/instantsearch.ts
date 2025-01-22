@@ -37,8 +37,9 @@ export type InstantSearchConfig = InstantSearchOptions;
 export type InstantSearchInstance = InstantSearch;
 
 @Component({
-  selector: 'ais-instantsearch',
-  template: '<ng-content></ng-content>',
+    selector: 'ais-instantsearch',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;

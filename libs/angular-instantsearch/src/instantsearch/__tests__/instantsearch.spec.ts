@@ -22,8 +22,9 @@ describe('InstantSearch', () => {
     };
 
     @Component({
-      template: `<ais-instantsearch [config]="config"> </ais-instantsearch>`,
-    })
+    template: `<ais-instantsearch [config]="config"> </ais-instantsearch>`,
+    standalone: false
+})
     class TestContainer {
       public config = {
         indexName: 'theIndexName',
@@ -56,8 +57,9 @@ describe('InstantSearch', () => {
     };
 
     @Component({
-      template: `<ais-instantsearch [config]="config"> </ais-instantsearch>`,
-    })
+    template: `<ais-instantsearch [config]="config"> </ais-instantsearch>`,
+    standalone: false
+})
     class TestContainer {
       public config = {
         indexName: 'theIndexName',

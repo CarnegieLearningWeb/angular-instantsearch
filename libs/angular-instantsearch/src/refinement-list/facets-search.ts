@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { bem } from '../utils';
 
 @Component({
-  selector: 'ais-facets-search',
-  template: `
+    selector: 'ais-facets-search',
+    template: `
     <div [class]="cx()">
       <form [class]="cx('form')" (submit)="handleSubmit($event)" novalidate>
         <input
@@ -55,6 +55,7 @@ import { bem } from '../utils';
       </form>
     </div>
   `,
+    standalone: false
 })
 export class NgAisFacetsSearch {
   @Input() public searchPlaceholder: string;

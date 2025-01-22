@@ -20,8 +20,9 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-configure',
-  template: '',
+    selector: 'ais-configure',
+    template: '',
+    standalone: false
 })
 export class NgAisConfigure extends TypedBaseWidget<
   ConfigureWidgetDescription,

@@ -22,8 +22,8 @@ export {
 };
 
 @Component({
-  selector: 'ais-sort-by',
-  template: `
+    selector: 'ais-sort-by',
+    template: `
     <div [class]="cx()">
       <select
         [class]="cx('select')"
@@ -40,6 +40,7 @@ export {
       </select>
     </div>
   `,
+    standalone: false
 })
 export class NgAisSortBy extends TypedBaseWidget<
   SortByWidgetDescription,

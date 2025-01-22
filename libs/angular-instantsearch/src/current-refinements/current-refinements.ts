@@ -13,8 +13,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-current-refinements',
-  template: `
+    selector: 'ais-current-refinements',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list')" *ngFor="let item of state.items">
         <li [class]="cx('item')">
@@ -36,6 +36,7 @@ import { noop } from '../utils';
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisCurrentRefinements extends TypedBaseWidget<
   CurrentRefinementsWidgetDescription,

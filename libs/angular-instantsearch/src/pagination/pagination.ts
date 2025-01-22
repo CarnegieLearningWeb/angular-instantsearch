@@ -13,8 +13,8 @@ import { noop, parseNumberInput } from '../utils';
 export { PaginationConnectorParams, PaginationRenderState };
 
 @Component({
-  selector: 'ais-pagination',
-  template: `
+    selector: 'ais-pagination',
+    template: `
     <div [ngClass]="[cx(), state.nbPages <= 1 ? cx('', 'noRefinement') : '']">
       <ul [class]="cx('list')">
         <li
@@ -104,6 +104,7 @@ export { PaginationConnectorParams, PaginationRenderState };
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisPagination extends TypedBaseWidget<
   PaginationWidgetDescription,

@@ -10,8 +10,9 @@ import {
 } from 'instantsearch.js/es/connectors/configure-related-items/connectConfigureRelatedItems';
 
 @Component({
-  selector: 'ais-experimental-configure-related-items',
-  template: '',
+    selector: 'ais-experimental-configure-related-items',
+    template: '',
+    standalone: false
 })
 export class NgAisConfigureRelatedItems extends TypedBaseWidget<
   ConfigureRelatedItemsWidgetDescription,

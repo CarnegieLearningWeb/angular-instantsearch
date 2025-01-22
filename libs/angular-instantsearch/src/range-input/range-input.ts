@@ -13,8 +13,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
 
 @Component({
-  selector: 'ais-range-input',
-  template: `
+    selector: 'ais-range-input',
+    template: `
     <div [ngClass]="[cx(), !canRefine ? cx('', 'noRefinement') : '']">
       <form [class]="cx('form')" (submit)="handleSubmit($event)" novalidate>
         <label [class]="cx('label')">
@@ -53,6 +53,7 @@ import { parseNumberInput, noop } from '../utils';
       </form>
     </div>
   `,
+    standalone: false
 })
 export class NgAisRangeInput extends TypedBaseWidget<
   RangeWidgetDescription,

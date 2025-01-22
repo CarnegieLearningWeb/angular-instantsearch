@@ -36,8 +36,8 @@ export type RatingMenuState = {
 };
 
 @Component({
-  selector: 'app-rating-menu',
-  template: `
+    selector: 'app-rating-menu',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list')">
         <li
@@ -83,6 +83,7 @@ export type RatingMenuState = {
       </svg>
     </ng-template>
   `,
+    standalone: false
 })
 export class RatingMenu extends BaseWidget {
   // rendering options

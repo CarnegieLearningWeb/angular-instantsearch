@@ -4,9 +4,10 @@ import { Hit } from 'instantsearch.js';
 import { reverseSnippet } from 'instantsearch.js/es/helpers';
 
 @Component({
-  selector: 'ais-reverse-snippet',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<span class="ais-ReverseSnippet" [innerHtml]="content"></span>`,
+    selector: 'ais-reverse-snippet',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<span class="ais-ReverseSnippet" [innerHtml]="content"></span>`,
+    standalone: false
 })
 export class NgAisReverseSnippet {
   @Input() attribute: string;

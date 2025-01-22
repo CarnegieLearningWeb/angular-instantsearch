@@ -14,7 +14,8 @@ const render = ({ hit, attribute, highlightedTagName = 'mark' }) => {
       >
       </ais-reverse-highlight>
     `,
-  })
+    standalone: false
+})
   class TestComponent {
     hit = hit;
     attribute: string = attribute;

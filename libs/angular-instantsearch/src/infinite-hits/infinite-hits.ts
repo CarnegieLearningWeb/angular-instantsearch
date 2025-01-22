@@ -19,8 +19,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-infinite-hits',
-  template: `
+    selector: 'ais-infinite-hits',
+    template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
@@ -58,6 +58,7 @@ import { noop } from '../utils';
       </button>
     </div>
   `,
+    standalone: false
 })
 export class NgAisInfiniteHits extends TypedBaseWidget<
   InfiniteHitsWidgetDescription,

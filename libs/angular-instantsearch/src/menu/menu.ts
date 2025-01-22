@@ -13,8 +13,8 @@ import {
 } from 'instantsearch.js/es/connectors/menu/connectMenu';
 
 @Component({
-  selector: 'ais-menu',
-  template: `
+    selector: 'ais-menu',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list')">
         <li
@@ -43,6 +43,7 @@ import {
       </button>
     </div>
   `,
+    standalone: false
 })
 export class NgAisMenu extends TypedBaseWidget<
   MenuWidgetDescription,
