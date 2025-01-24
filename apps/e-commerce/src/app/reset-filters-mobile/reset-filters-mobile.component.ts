@@ -21,7 +21,7 @@ import { connectClearRefinements } from 'instantsearch.js/es/connectors';
   `,
     standalone: false
 })
-export class ResetFiltersMobile extends BaseWidget<any> {
+export class ResetFiltersMobile extends BaseWidget<unknown> {
   public state = {
     hasRefinements: false,
     refine: () => {},
