@@ -15,8 +15,8 @@ export type NoResultsState = {
 };
 
 @Component({
-  selector: 'app-no-results',
-  template: `
+    selector: 'app-no-results',
+    template: `
     <div *ngIf="state && state.results && state.results.nbHits === 0">
       <div class="hits-empty-state">
         <svg
@@ -111,10 +111,9 @@ export type NoResultsState = {
       </div>
     </div>
   `,
+    standalone: false
 })
-export class NoResults extends BaseWidget {
-  public state: NoResultsState = {};
-
+export class NoResults extends BaseWidget<NoResultsState> {
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()

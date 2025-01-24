@@ -20,8 +20,8 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 
 @Component({
-  selector: 'ais-query-rule-custom-data',
-  template: `
+    selector: 'ais-query-rule-custom-data',
+    template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">
       </ng-container>
@@ -33,6 +33,7 @@ import { NgAisIndex } from '../index-widget/index-widget';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class NgAisQueryRuleCustomData extends TypedBaseWidget<
   QueryRulesWidgetDescription,

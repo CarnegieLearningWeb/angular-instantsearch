@@ -12,8 +12,8 @@ import {
 } from 'instantsearch.js/es/connectors/toggle-refinement/connectToggleRefinement';
 
 @Component({
-  selector: 'ais-toggle',
-  template: `
+    selector: 'ais-toggle',
+    template: `
     <div [class]="cx()">
       <label [class]="cx('label')">
         <input
@@ -32,6 +32,7 @@ import {
       </label>
     </div>
   `,
+    standalone: false
 })
 export class NgAisToggle extends TypedBaseWidget<
   ToggleRefinementWidgetDescription,

@@ -17,8 +17,9 @@ import indexWidget, {
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'ais-index',
-  template: `<ng-content></ng-content>`,
+    selector: 'ais-index',
+    template: `<ng-content></ng-content>`,
+    standalone: false
 })
 export class NgAisIndex implements OnInit, OnDestroy {
   @Input() public indexName: IndexWidgetParams['indexName'];
@@ -54,10 +55,16 @@ export class NgAisIndex implements OnInit, OnDestroy {
   }
 
   public addWidgets(widgets: Widget[]) {
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
     this.widget.addWidgets(widgets);
   }
 
   public removeWidgets(widgets: Widget[]) {
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
     this.widget.removeWidgets(widgets);
   }
 

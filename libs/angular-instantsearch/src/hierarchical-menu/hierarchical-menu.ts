@@ -12,8 +12,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
 
 @Component({
-  selector: 'ais-hierarchical-menu',
-  template: `
+    selector: 'ais-hierarchical-menu',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
         <ais-hierarchical-menu-item
@@ -26,6 +26,7 @@ import { parseNumberInput, noop } from '../utils';
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisHierarchicalMenu extends TypedBaseWidget<
   HierarchicalMenuWidgetDescription,

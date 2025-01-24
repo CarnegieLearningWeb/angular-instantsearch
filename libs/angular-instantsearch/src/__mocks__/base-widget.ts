@@ -11,7 +11,7 @@ export type Connector = (
 export class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;
-  public cx?: ReturnType<typeof bem>;
+  public cx: ReturnType<typeof bem>;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);

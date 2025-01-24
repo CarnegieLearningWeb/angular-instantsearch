@@ -23,14 +23,15 @@ import { TypedBaseWidget } from '../typed-base-widget';
 import { noop, parseNumberInput } from '../utils';
 
 @Component({
-  selector: 'ais-range-slider',
-  template: `
+    selector: 'ais-range-slider',
+    template: `
     <div [class]="cx()">
       <div [class]="cx('body')">
         <div #sliderContainer></div>
       </div>
     </div>
   `,
+    standalone: false
 })
 export class NgAisRangeSlider extends TypedBaseWidget<
   RangeWidgetDescription,

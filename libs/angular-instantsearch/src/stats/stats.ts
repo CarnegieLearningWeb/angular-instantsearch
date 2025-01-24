@@ -19,8 +19,8 @@ import {
 } from 'instantsearch.js/es/connectors/stats/connectStats';
 
 @Component({
-  selector: 'ais-stats',
-  template: `
+    selector: 'ais-stats',
+    template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">
       </ng-container>
@@ -30,6 +30,7 @@ import {
       </span>
     </div>
   `,
+    standalone: false
 })
 export class NgAisStats extends TypedBaseWidget<
   StatsWidgetDescription,

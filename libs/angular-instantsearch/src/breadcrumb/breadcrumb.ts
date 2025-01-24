@@ -12,8 +12,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-breadcrumb',
-  template: `
+    selector: 'ais-breadcrumb',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list')">
         <li
@@ -44,6 +44,7 @@ import { noop } from '../utils';
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisBreadcrumb extends TypedBaseWidget<
   BreadcrumbWidgetDescription,

@@ -12,8 +12,8 @@ import {
 } from 'instantsearch.js/es/connectors/refinement-list/connectRefinementList';
 
 @Component({
-  selector: 'ais-refinement-list',
-  template: `
+    selector: 'ais-refinement-list',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <div *ngIf="searchable" [class]="cx('searchBox')">
         <ais-facets-search
@@ -57,6 +57,7 @@ import {
       </button>
     </div>
   `,
+    standalone: false
 })
 export class NgAisRefinementList extends TypedBaseWidget<
   RefinementListWidgetDescription,

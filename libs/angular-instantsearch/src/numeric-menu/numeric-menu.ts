@@ -12,8 +12,8 @@ import {
 } from 'instantsearch.js/es/connectors/numeric-menu/connectNumericMenu';
 
 @Component({
-  selector: 'ais-numeric-menu',
-  template: `
+    selector: 'ais-numeric-menu',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <ul [class]="cx('list')">
         <li [class]="getItemClass(item)" *ngFor="let item of state.items">
@@ -31,6 +31,7 @@ import {
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisNumericMenu extends TypedBaseWidget<
   NumericMenuWidgetDescription,

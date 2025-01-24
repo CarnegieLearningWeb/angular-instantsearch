@@ -11,8 +11,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-clear-refinements',
-  template: `
+    selector: 'ais-clear-refinements',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <button
         [class]="
@@ -26,6 +26,7 @@ import { noop } from '../utils';
       </button>
     </div>
   `,
+    standalone: false
 })
 export class NgAisClearRefinements extends TypedBaseWidget<
   ClearRefinementsWidgetDescription,

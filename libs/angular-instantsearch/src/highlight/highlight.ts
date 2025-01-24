@@ -6,9 +6,10 @@ import { highlight } from 'instantsearch.js/es/helpers';
 import { getPropertyByPath } from 'instantsearch.js/es/lib/utils';
 
 @Component({
-  selector: 'ais-highlight',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<span class="ais-Highlight" [innerHtml]="content"></span>`,
+    selector: 'ais-highlight',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<span class="ais-Highlight" [innerHtml]="content"></span>`,
+    standalone: false
 })
 export class NgAisHighlight {
   @Input() attribute: string;

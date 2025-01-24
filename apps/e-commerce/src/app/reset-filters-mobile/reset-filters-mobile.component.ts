@@ -7,8 +7,8 @@ import {
 import { connectClearRefinements } from 'instantsearch.js/es/connectors';
 
 @Component({
-  selector: 'app-reset-filters-mobile',
-  template: `
+    selector: 'app-reset-filters-mobile',
+    template: `
     <div class="ais-ClearRefinements">
       <button
         type="button"
@@ -19,8 +19,9 @@ import { connectClearRefinements } from 'instantsearch.js/es/connectors';
       </button>
     </div>
   `,
+    standalone: false
 })
-export class ResetFiltersMobile extends BaseWidget {
+export class ResetFiltersMobile extends BaseWidget<unknown> {
   public state = {
     hasRefinements: false,
     refine: () => {},

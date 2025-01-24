@@ -19,8 +19,8 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 
 @Component({
-  selector: 'ais-hits',
-  template: `
+    selector: 'ais-hits',
+    template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
@@ -34,6 +34,7 @@ import { NgAisIndex } from '../index-widget/index-widget';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class NgAisHits extends TypedBaseWidget<
   HitsWidgetDescription,
@@ -48,8 +49,9 @@ export class NgAisHits extends TypedBaseWidget<
   public state: HitsRenderState = {
     hits: [],
     results: undefined,
-    bindEvent: undefined,
-    sendEvent: undefined,
+    items: [],
+    sendEvent: () => {},
+    bindEvent: () => '',
   };
 
   constructor(

@@ -14,7 +14,8 @@ const render = ({ hit, attribute, highlightedTagName = 'mark' }) => {
       >
       </ais-snippet>
     `,
-  })
+    standalone: false
+})
   class TestComponent {
     hit = hit;
     attribute: string = attribute;

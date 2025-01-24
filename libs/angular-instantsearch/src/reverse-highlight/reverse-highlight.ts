@@ -4,9 +4,10 @@ import { Hit } from 'instantsearch.js';
 import { reverseHighlight } from 'instantsearch.js/es/helpers';
 
 @Component({
-  selector: 'ais-reverse-highlight',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<span class="ais-ReverseHighlight" [innerHtml]="content"></span>`,
+    selector: 'ais-reverse-highlight',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<span class="ais-ReverseHighlight" [innerHtml]="content"></span>`,
+    standalone: false
 })
 export class NgAisReverseHighlight {
   @Input() attribute: string;

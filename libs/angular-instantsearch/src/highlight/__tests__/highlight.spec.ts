@@ -10,7 +10,8 @@ const render = ({ hit, attribute, tagName = 'mark' }) => {
       <ais-highlight [attribute]="attribute" [hit]="hit" [tagName]="tagName">
       </ais-highlight>
     `,
-  })
+    standalone: false
+})
   class TestComponent {
     hit = hit;
     attribute: string = attribute;

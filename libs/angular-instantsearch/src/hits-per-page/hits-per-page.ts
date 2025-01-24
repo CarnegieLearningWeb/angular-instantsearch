@@ -12,8 +12,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 @Component({
-  selector: 'ais-hits-per-page',
-  template: `
+    selector: 'ais-hits-per-page',
+    template: `
     <div [class]="cx()" *ngIf="!isHidden">
       <select
         [class]="cx('select')"
@@ -30,6 +30,7 @@ import { noop } from '../utils';
       </select>
     </div>
   `,
+    standalone: false
 })
 export class NgAisHitsPerPage extends TypedBaseWidget<
   HitsPerPageWidgetDescription,
@@ -43,6 +44,7 @@ export class NgAisHitsPerPage extends TypedBaseWidget<
     refine: noop,
     hasNoResults: true, // TODO: disable <select> when true
     canRefine: false,
+    createURL: () => '#',
   };
 
   get isHidden(): boolean {

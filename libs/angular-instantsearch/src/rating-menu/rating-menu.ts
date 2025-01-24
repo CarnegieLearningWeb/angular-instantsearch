@@ -12,8 +12,8 @@ import {
 } from 'instantsearch.js/es/connectors/rating-menu/connectRatingMenu';
 
 @Component({
-  selector: 'ais-rating-menu',
-  template: `
+    selector: 'ais-rating-menu',
+    template: `
     <div
       [ngClass]="[cx(), state.items.length === 0 ? cx('', 'noRefinement') : '']"
       *ngIf="!isHidden"
@@ -70,6 +70,7 @@ import {
       </ul>
     </div>
   `,
+    standalone: false
 })
 export class NgAisRatingMenu extends TypedBaseWidget<
   RatingMenuWidgetDescription,

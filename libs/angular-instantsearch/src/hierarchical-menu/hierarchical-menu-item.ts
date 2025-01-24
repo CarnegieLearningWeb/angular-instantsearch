@@ -6,8 +6,8 @@ import {
 } from 'instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu';
 
 @Component({
-  selector: 'ais-hierarchical-menu-item',
-  template: `
+    selector: 'ais-hierarchical-menu-item',
+    template: `
     <li [class]="getItemClass(item)" (click)="handleClick($event, item)">
       <a
         [class]="cx('link')"
@@ -33,6 +33,7 @@ import {
       </ul>
     </li>
   `,
+    standalone: false
 })
 export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;

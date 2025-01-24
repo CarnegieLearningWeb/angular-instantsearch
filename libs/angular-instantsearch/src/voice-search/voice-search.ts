@@ -23,8 +23,8 @@ import {
 } from 'instantsearch.js/es/connectors/voice-search/connectVoiceSearch';
 
 @Component({
-  selector: 'ais-voice-search',
-  template: `
+    selector: 'ais-voice-search',
+    template: `
     <div [class]="cx()">
       <button
         type="button"
@@ -100,6 +100,7 @@ import {
       <p>{{ transcript }}</p>
     </ng-template>
   `,
+    standalone: false
 })
 export class NgAisVoiceSearch
   extends TypedBaseWidget<

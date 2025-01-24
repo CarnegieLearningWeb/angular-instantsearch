@@ -4,9 +4,10 @@ import { Hit } from 'instantsearch.js';
 import { snippet } from 'instantsearch.js/es/helpers';
 
 @Component({
-  selector: 'ais-snippet',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<span class="ais-Snippet" [innerHtml]="content"></span>`,
+    selector: 'ais-snippet',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<span class="ais-Snippet" [innerHtml]="content"></span>`,
+    standalone: false
 })
 export class NgAisSnippet {
   @Input() attribute: string;

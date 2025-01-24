@@ -25,8 +25,8 @@ import {
 } from 'instantsearch.js/es/connectors/search-box/connectSearchBox';
 
 @Component({
-  selector: 'ais-search-box',
-  template: `
+    selector: 'ais-search-box',
+    template: `
     <div [class]="cx()">
       <form [class]="cx('form')" novalidate (submit)="handleSubmit($event)">
         <input
@@ -111,6 +111,7 @@ import {
       </form>
     </div>
   `,
+    standalone: false
 })
 export class NgAisSearchBox
   extends TypedBaseWidget<SearchBoxWidgetDescription, SearchBoxConnectorParams>

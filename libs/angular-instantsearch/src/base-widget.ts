@@ -12,7 +12,7 @@ export type Widget = W | IndexWidget;
 // since non-ts connectors can't have generics like Connector has,
 // as well as sometimes being not accurate enough / missing keys.
 export type Connector = (
-  renderFn: (state: object, isFirstRendering: boolean) => void,
+  renderFn: (state: Record<any, any>, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
@@ -51,12 +51,15 @@ export abstract class BaseWidget<TState extends Record<string, unknown>>
   }
 
   public ngOnInit() {
-    this.parent.addWidgets([this.widget]);
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
+    this.parent.addWidgets([this.widget as W]);
   }
 
   public ngOnDestroy() {
     if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
-      this.parent.removeWidgets([this.widget]);
+      this.parent.removeWidgets([this.widget as W]);
     }
   }
 

@@ -14,8 +14,9 @@ import { REQUEST } from '../express.tokens';
 import { Request } from 'express';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    standalone: false
 })
 export class AppComponent {
   title = 'server-side-rendering';
