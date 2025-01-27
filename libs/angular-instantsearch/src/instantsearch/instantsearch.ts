@@ -12,7 +12,7 @@ import {
   VERSION as AngularVersion,
 } from '@angular/core';
 
-import { liteClient } from 'algoliasearch/lite';
+import * as algoliasearchProxy from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js/es';
 
 import { Widget } from '../typed-base-widget';
@@ -22,7 +22,7 @@ export { SearchClient, Hit } from 'instantsearch.js/es/types';
 export { PlainSearchParameters as SearchParameters } from 'algoliasearch-helper';
 
 // this is needed for different webpack/typescript configurations
-const _algoliasearch = liteClient;
+const _algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type FacetSortByStringOptions =
   | 'count'
@@ -37,9 +37,9 @@ export type InstantSearchConfig = InstantSearchOptions;
 export type InstantSearchInstance = InstantSearch;
 
 @Component({
-    selector: 'ais-instantsearch',
-    template: '<ng-content></ng-content>',
-    standalone: false
+  selector: 'ais-instantsearch',
+  template: '<ng-content></ng-content>',
+  standalone: false,
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;

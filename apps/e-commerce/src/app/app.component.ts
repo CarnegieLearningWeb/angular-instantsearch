@@ -1,14 +1,14 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { liteClient } from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    standalone: false
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  standalone: false,
 })
 export class AppComponent implements AfterViewInit {
   config = {
-    searchClient: liteClient('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
+    searchClient: algoliasearch('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
     indexName: 'instant_search',
     routing: true,
   };

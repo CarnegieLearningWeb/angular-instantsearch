@@ -1,4 +1,4 @@
-import { liteClient as algoliasearchProxy, SearchTypeDefault } from 'algoliasearch/lite';
+import * as algoliasearchProxy from 'algoliasearch/lite';
 import * as encodeProxy from 'querystring-es3/encode';
 import {
   VERSION as AngularVersion,
@@ -30,7 +30,14 @@ type RequestOptions = {
 // compatibility with different typescript settings:
 // - esModuleInterop
 // - allowSyntheticDefaultImports
-const algoliasearch = algoliasearchProxy;
+const algoliasearch = (
+  typeof algoliasearchProxy.default === 'function'
+    ? algoliasearchProxy.default
+    : algoliasearchProxy
+// eslint-disable-next-line @typescript-eslint/ban-types
+) as typeof algoliasearchProxy.default extends Function
+  ? typeof algoliasearchProxy.default
+  : typeof algoliasearchProxy;
 
 const encode = encodeProxy.default || encodeProxy;
 
