@@ -37,7 +37,7 @@ export class NgAisIndex implements OnInit, OnDestroy {
     public instantSearchInstance: NgAisInstantSearch
   ) {}
 
-  get parent() {
+  get parent(): NgAisInstantSearch | NgAisIndex {
     if (this.parentIndex) {
       return this.parentIndex;
     }
@@ -70,11 +70,11 @@ export class NgAisIndex implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.createWidget();
-    this.parent.addWidgets([this.widget]);
+    this.parent.addWidgets([this.widget as Widget]);
   }
   public ngOnDestroy() {
     if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
-      this.parent.removeWidgets([this.widget]);
+      this.parent.removeWidgets([this.widget as Widget]);
     }
   }
 }

@@ -48,13 +48,13 @@ export class NgAisToggle extends TypedBaseWidget<
 
   public state: ToggleRefinementRenderState = {
     canRefine: false,
-    sendEvent: undefined,
+    sendEvent: noop,
     value: {
-      count: undefined,
+      count: 0,
       isRefined: false,
       name: '',
-      offFacetValue: undefined,
-      onFacetValue: undefined,
+      offFacetValue: { isRefined: false, count: null },
+      onFacetValue: { isRefined: false, count: null },
     },
     createURL: () => '#',
     refine: noop,

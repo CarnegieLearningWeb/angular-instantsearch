@@ -16,9 +16,11 @@ export function parseNumberInput(input?: number | string) {
   return typeof input === 'string' ? parseInt(input, 10) : input;
 }
 
-export function noop(..._args: unknown[]): void {}
+export function noop(..._args: unknown[]): void {
+  // noop
+}
 
-export function capitalize(s) {
+export function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
@@ -52,5 +54,5 @@ export function getPropertyByPath(object: object, path: string): unknown {
   return path
     .replace(/\[(\d+)]/g, '.$1')
     .split('.')
-    .reduce((current, key) => (current ? current[key] : undefined), object);
+    .reduce((current: { [key: string]: any }, key: string) => (current ? current[key] : undefined), object);
 }

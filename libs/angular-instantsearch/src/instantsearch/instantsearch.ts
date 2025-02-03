@@ -43,7 +43,7 @@ export type InstantSearchInstance = InstantSearch;
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;
-  @Input() public instanceName: string = 'default';
+  @Input() public instanceName = 'default';
 
   @Output()
   change: EventEmitter<{ results: {}; state: {} }> = new EventEmitter<{
@@ -95,8 +95,8 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
 
   onRender = () => {
     this.change.emit({
-      results: this.instantSearchInstance.helper.lastResults,
-      state: this.instantSearchInstance.helper.state,
+      results: this.instantSearchInstance.helper?.lastResults || {},
+      state: this.instantSearchInstance.helper?.state || {},
     });
   };
 }

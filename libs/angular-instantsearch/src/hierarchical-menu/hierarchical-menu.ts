@@ -55,7 +55,7 @@ export class NgAisHierarchicalMenu extends TypedBaseWidget<
   };
 
   get isHidden(): boolean {
-    return this.state.items.length === 0 && this.autoHideContainer;
+    return this.state.items.length === 0 && !!this.autoHideContainer;
   }
 
   constructor(

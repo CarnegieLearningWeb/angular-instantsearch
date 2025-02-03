@@ -1,4 +1,4 @@
-import { liteClient as algoliasearchProxy, SearchTypeDefault } from 'algoliasearch/lite';
+import { liteClient as algoliasearchProxy } from 'algoliasearch/lite';
 import * as encodeProxy from 'querystring-es3/encode';
 import {
   VERSION as AngularVersion,

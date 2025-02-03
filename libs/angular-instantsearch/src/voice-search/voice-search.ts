@@ -115,9 +115,9 @@ export class NgAisVoiceSearch
   status: TemplateRef<ElementRef>;
 
   // rendering options
-  @Input() public buttonTitle: string = 'Search by voice';
+  @Input() public buttonTitle = 'Search by voice';
   @Input()
-  public disabledButtonTitle: string =
+  public disabledButtonTitle =
     'Search by voice (not supported on this browser)';
 
   // instance option
@@ -125,8 +125,8 @@ export class NgAisVoiceSearch
   public searchAsYouSpeak?: VoiceSearchConnectorParams['searchAsYouSpeak'];
 
   public state: VoiceSearchRenderState = {
-    isBrowserSupported: undefined,
-    isListening: undefined,
+    isBrowserSupported: false,
+    isListening: false,
     toggleListening: noop,
     voiceListeningState: {
       status: 'initial',

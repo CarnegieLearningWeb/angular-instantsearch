@@ -41,8 +41,8 @@ export class NgAisRangeSlider extends TypedBaseWidget<
   public sliderContainer: ElementRef<HTMLDivElement>;
 
   // rendering options
-  @Input() public pips: boolean = true;
-  @Input() public tooltips: boolean = true;
+  @Input() public pips = true;
+  @Input() public tooltips = true;
 
   // instance options
   @Input() public attribute: RangeConnectorParams['attribute'];
@@ -150,12 +150,12 @@ export class NgAisRangeSlider extends TypedBaseWidget<
     } = state;
 
     const disabled = min === max;
-    const range = disabled ? { min, max: max + 0.0001 } : { min, max };
+    const range = disabled ? { min, max: max ? max + 0.0001 : 0 } : { min, max };
 
     // TODO: test this as we're nolonger passing disable
     // it seems the API has changed: slider.setAttribute('disabled', true) / slider.removeAttribute('disabled');
     // see: https://refreshless.com/nouislider/more/#section-disable
-    this.slider.updateOptions({ range, start });
+    this.slider?.updateOptions({ range, start });
   };
 
   public handleChange = (values: RangeBoundaries) => {

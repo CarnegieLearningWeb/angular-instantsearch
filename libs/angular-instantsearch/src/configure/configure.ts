@@ -34,7 +34,7 @@ export class NgAisConfigure extends TypedBaseWidget<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private differ: KeyValueDiffer<string, any>;
 
-  public state: ConfigureRenderState = {
+  public override state: ConfigureRenderState = {
     refine: noop,
   };
 
@@ -57,7 +57,7 @@ export class NgAisConfigure extends TypedBaseWidget<
     }
   }
 
-  public ngOnInit() {
+  public override ngOnInit() {
     this.createWidget(
       connectConfigure,
       {

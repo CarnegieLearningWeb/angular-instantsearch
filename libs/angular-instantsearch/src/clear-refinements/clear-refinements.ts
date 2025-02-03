@@ -33,7 +33,7 @@ export class NgAisClearRefinements extends TypedBaseWidget<
   ClearRefinementsConnectorParams
 > {
   // rendering options
-  @Input() public resetLabel: string = 'Clear refinements';
+  @Input() public resetLabel = 'Clear refinements';
 
   // instance options
   @Input()
@@ -43,7 +43,7 @@ export class NgAisClearRefinements extends TypedBaseWidget<
   @Input()
   public transformItems?: ClearRefinementsConnectorParams['transformItems'];
 
-  public state: ClearRefinementsRenderState = {
+  public override state: ClearRefinementsRenderState = {
     hasRefinements: false,
     canRefine: false,
     refine: noop,
@@ -51,7 +51,7 @@ export class NgAisClearRefinements extends TypedBaseWidget<
   };
 
   get isHidden(): boolean {
-    return !this.state.hasRefinements && this.autoHideContainer;
+    return !this.state.hasRefinements && !!this.autoHideContainer;
   }
 
   constructor(
@@ -64,7 +64,7 @@ export class NgAisClearRefinements extends TypedBaseWidget<
     super('ClearRefinements');
   }
 
-  public ngOnInit() {
+  public override ngOnInit() {
     this.createWidget(
       connectClearRefinements,
       {
