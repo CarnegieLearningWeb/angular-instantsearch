@@ -51,7 +51,7 @@ export class NgAisBreadcrumb extends TypedBaseWidget<
   BreadcrumbConnectorParams
 > {
   // instance options
-  @Input() public attributes: BreadcrumbConnectorParams['attributes'];
+  @Input() public attributes: BreadcrumbConnectorParams['attributes'] = [];
   @Input() public rootPath?: BreadcrumbConnectorParams['rootPath'];
   @Input() public separator?: BreadcrumbConnectorParams['separator'];
   @Input() public transformItems?: BreadcrumbConnectorParams['transformItems'];
@@ -70,7 +70,7 @@ export class NgAisBreadcrumb extends TypedBaseWidget<
     }));
   }
 
-  public state: BreadcrumbRenderState = {
+  public override state: BreadcrumbRenderState = {
     createURL: () => '#',
     items: [],
     refine: noop,
@@ -87,7 +87,7 @@ export class NgAisBreadcrumb extends TypedBaseWidget<
     super('Breadcrumb');
   }
 
-  public ngOnInit() {
+  public override ngOnInit() {
     this.createWidget(
       connectBreadcrumb,
       {

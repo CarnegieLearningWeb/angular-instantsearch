@@ -34,7 +34,7 @@ export class NgAisConfigureRelatedItems extends TypedBaseWidget<
     super('ExperimentalConfigureRelatedItems');
   }
 
-  public ngOnInit() {
+  public override ngOnInit() {
     this.createWidget(
       EXPERIMENTAL_connectConfigureRelatedItems,
       {

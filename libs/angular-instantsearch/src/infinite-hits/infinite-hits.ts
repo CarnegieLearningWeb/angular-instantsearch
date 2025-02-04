@@ -64,15 +64,18 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
   InfiniteHitsWidgetDescription,
   InfiniteHitsConnectorParams
 > {
-  @ContentChild(TemplateRef, { static: false })
-  public template?: TemplateRef<unknown>;
+  @ContentChild(
+    TemplateRef,
+    { static: false }
+  )
+  public template: TemplateRef<unknown>;
 
   // rendering options
   @Input() public escapeHTML: InfiniteHitsConnectorParams['escapeHTML'];
   @Input()
   public showPrevious: InfiniteHitsConnectorParams['showPrevious'] = false;
-  @Input() public showPreviousLabel: string = 'Show previous results';
-  @Input() public showMoreLabel: string = 'Show more results';
+  @Input() public showPreviousLabel = 'Show previous results';
+  @Input() public showMoreLabel = 'Show more results';
   @Input()
   public transformItems?: InfiniteHitsConnectorParams['transformItems'];
 
@@ -123,7 +126,7 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
     this.state.showPrevious();
   }
 
-  updateState = (state, isFirstRendering: boolean) => {
+  updateState = (state: InfiniteHitsRenderState, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
     this.state = state;
   };

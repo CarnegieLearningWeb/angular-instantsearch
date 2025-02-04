@@ -17,6 +17,7 @@ import {
 import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
+import { noop } from 'instantsearch.js/es/lib/utils';
 
 @Component({
     selector: 'ais-hits',
@@ -41,7 +42,7 @@ export class NgAisHits extends TypedBaseWidget<
   HitsConnectorParams
 > {
   @ContentChild(TemplateRef, { static: false })
-  public template?: TemplateRef<unknown>;
+  public template: TemplateRef<unknown> | null = null;
 
   @Input() public escapeHTML?: HitsConnectorParams['escapeHTML'];
   @Input() public transformItems?: HitsConnectorParams['transformItems'];
@@ -50,7 +51,7 @@ export class NgAisHits extends TypedBaseWidget<
     hits: [],
     results: undefined,
     items: [],
-    sendEvent: () => {},
+    sendEvent: noop,
     bindEvent: () => '',
   };
 

@@ -53,11 +53,14 @@ export abstract class TypedBaseWidget<
   }
 
   public ngOnInit() {
+    if (!this.widget) {
+      throw new Error('Widget has not been created');
+    }
     this.parent.addWidgets([this.widget]);
   }
 
   public ngOnDestroy() {
-    if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
+    if (isPlatformBrowser(this.instantSearchInstance.platformId) && this.widget) {
       this.parent.removeWidgets([this.widget]);
     }
   }

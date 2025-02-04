@@ -60,9 +60,9 @@ export class NgAisRangeInput extends TypedBaseWidget<
   RangeConnectorParams
 > {
   // rendering options
-  @Input() public currency: string = '$';
-  @Input() public separator: string = 'to';
-  @Input() public submitLabel: string = 'Go';
+  @Input() public currency = '$';
+  @Input() public separator = 'to';
+  @Input() public submitLabel = 'Go';
 
   // instance options
   @Input() public attribute: RangeConnectorParams['attribute'];
@@ -75,7 +75,7 @@ export class NgAisRangeInput extends TypedBaseWidget<
   public maxInputValue?: number;
 
   get step() {
-    const precision = parseNumberInput(this.precision);
+    const precision = parseNumberInput(this.precision) || 2;
     return 1 / Math.pow(10, precision);
   }
 
@@ -93,7 +93,7 @@ export class NgAisRangeInput extends TypedBaseWidget<
       from: () => '',
       to: () => '',
     },
-    sendEvent: undefined,
+    sendEvent: noop,
   };
 
   constructor(
