@@ -70,7 +70,7 @@ export class NgAisFacetsSearch {
     this.search(value);
   }
 
-  public handleSubmit(event) {
+  public handleSubmit(event: Event) {
     event.preventDefault();
     this.search(this.searchQuery);
   }
