@@ -23,41 +23,47 @@ import { noop } from '../utils';
     template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
-
+    
       <!-- default rendering if no template specified -->
-      <button
+      @if (showPrevious && !template) {
+        <button
         [ngClass]="[
           cx('loadPrevious'),
           this.state.isFirstPage ? cx('loadPrevious', 'disabled') : ''
         ]"
-        (click)="showPreviousHandler($event)"
-        [disabled]="state.isFirstPage"
-        *ngIf="showPrevious && !template"
-      >
-        {{ showPreviousLabel }}
-      </button>
-
-      <div *ngIf="!template">
-        <ul [class]="cx('list')">
-          <li [class]="cx('item')" *ngFor="let hit of state.hits">
-            <ais-highlight attribute="name" [hit]="hit"> </ais-highlight>
-          </li>
-        </ul>
-      </div>
-
-      <button
+          (click)="showPreviousHandler($event)"
+          [disabled]="state.isFirstPage"
+          >
+          {{ showPreviousLabel }}
+        </button>
+      }
+    
+      @if (!template) {
+        <div>
+          <ul [class]="cx('list')">
+            @for (hit of state.hits; track hit) {
+              <li [class]="cx('item')">
+                <ais-highlight attribute="name" [hit]="hit"> </ais-highlight>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    
+      @if (!template) {
+        <button
         [ngClass]="[
           cx('loadMore'),
           this.state.isLastPage ? cx('loadMore', 'disabled') : ''
         ]"
-        (click)="showMoreHandler($event)"
-        [disabled]="state.isLastPage"
-        *ngIf="!template"
-      >
-        {{ showMoreLabel }}
-      </button>
+          (click)="showMoreHandler($event)"
+          [disabled]="state.isLastPage"
+          >
+          {{ showMoreLabel }}
+        </button>
+      }
     </div>
-  `,
+    `,
     standalone: false
 })
 export class NgAisInfiniteHits extends TypedBaseWidget<

@@ -17,38 +17,41 @@ export { PaginationConnectorParams, PaginationRenderState };
     template: `
     <div [ngClass]="[cx(), state.nbPages <= 1 ? cx('', 'noRefinement') : '']">
       <ul [class]="cx('list')">
-        <li
-          *ngIf="showFirst"
-          (click)="refine($event, 0)"
+        @if (showFirst) {
+          <li
+            (click)="refine($event, 0)"
           [class]="
             cx('item') +
             ' ' +
             cx('item', 'firstPage') +
             (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
           "
-        >
-          <a [href]="state.createURL(0)" [class]="cx('link')"> ‹‹ </a>
-        </li>
-
-        <li
-          *ngIf="showPrevious"
-          (click)="refine($event, state.currentRefinement - 1)"
+            >
+            <a [href]="state.createURL(0)" [class]="cx('link')"> ‹‹ </a>
+          </li>
+        }
+    
+        @if (showPrevious) {
+          <li
+            (click)="refine($event, state.currentRefinement - 1)"
           [class]="
             cx('item') +
             ' ' +
             cx('item', 'previousPage') +
             (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
           "
-        >
-          <a
-            [href]="state.createURL(state.currentRefinement - 1)"
-            [class]="cx('link')"
-          >
-            ‹
-          </a>
-        </li>
-
-        <li
+            >
+            <a
+              [href]="state.createURL(state.currentRefinement - 1)"
+              [class]="cx('link')"
+              >
+              ‹
+            </a>
+          </li>
+        }
+    
+        @for (page of state.pages; track page) {
+          <li
           [class]="
             cx('item') +
             ' ' +
@@ -57,17 +60,17 @@ export { PaginationConnectorParams, PaginationRenderState };
               ? ' ' + cx('item', 'selected')
               : '')
           "
-          *ngFor="let page of state.pages"
-          (click)="refine($event, page)"
-        >
-          <a [class]="cx('link')" [href]="state.createURL(page)">
-            {{ page + 1 }}
-          </a>
-        </li>
-
-        <li
-          *ngIf="showNext"
-          (click)="refine($event, state.currentRefinement + 1)"
+            (click)="refine($event, page)"
+            >
+            <a [class]="cx('link')" [href]="state.createURL(page)">
+              {{ page + 1 }}
+            </a>
+          </li>
+        }
+    
+        @if (showNext) {
+          <li
+            (click)="refine($event, state.currentRefinement + 1)"
           [class]="
             cx('item') +
             ' ' +
@@ -76,18 +79,19 @@ export { PaginationConnectorParams, PaginationRenderState };
               ? ' ' + cx('item', 'disabled')
               : '')
           "
-        >
-          <a
-            [href]="state.createURL(state.currentRefinement + 1)"
-            [class]="cx('link')"
-          >
-            ›
-          </a>
-        </li>
-
-        <li
-          *ngIf="showLast"
-          (click)="refine($event, state.nbPages - 1)"
+            >
+            <a
+              [href]="state.createURL(state.currentRefinement + 1)"
+              [class]="cx('link')"
+              >
+              ›
+            </a>
+          </li>
+        }
+    
+        @if (showLast) {
+          <li
+            (click)="refine($event, state.nbPages - 1)"
           [class]="
             cx('item') +
             ' ' +
@@ -96,14 +100,15 @@ export { PaginationConnectorParams, PaginationRenderState };
               ? ' ' + cx('item', 'disabled')
               : '')
           "
-        >
-          <a [href]="state.createURL(state.nbPages - 1)" [class]="cx('link')">
-            ››
-          </a>
-        </li>
+            >
+            <a [href]="state.createURL(state.nbPages - 1)" [class]="cx('link')">
+              ››
+            </a>
+          </li>
+        }
       </ul>
     </div>
-  `,
+    `,
     standalone: false
 })
 export class NgAisPagination extends TypedBaseWidget<

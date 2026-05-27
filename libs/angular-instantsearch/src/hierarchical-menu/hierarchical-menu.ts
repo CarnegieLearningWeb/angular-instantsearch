@@ -14,18 +14,21 @@ import { parseNumberInput, noop } from '../utils';
 @Component({
     selector: 'ais-hierarchical-menu',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
-        <ais-hierarchical-menu-item
-          *ngFor="let item of state.items"
-          [item]="item"
-          [createURL]="state.createURL"
-          [refine]="state.refine"
-        >
-        </ais-hierarchical-menu-item>
-      </ul>
-    </div>
-  `,
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
+          @for (item of state.items; track item) {
+            <ais-hierarchical-menu-item
+              [item]="item"
+              [createURL]="state.createURL"
+              [refine]="state.refine"
+              >
+            </ais-hierarchical-menu-item>
+          }
+        </ul>
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisHierarchicalMenu extends TypedBaseWidget<

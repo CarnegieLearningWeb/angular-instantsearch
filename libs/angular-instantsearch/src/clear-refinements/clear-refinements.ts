@@ -13,19 +13,21 @@ import { noop } from '../utils';
 @Component({
     selector: 'ais-clear-refinements',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <button
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <button
         [class]="
           cx('button') +
           (!state.hasRefinements ? ' ' + cx('button', 'disabled') : '')
         "
-        (click)="handleClick($event)"
-        [disabled]="!state.hasRefinements"
-      >
-        {{ resetLabel }}
-      </button>
-    </div>
-  `,
+          (click)="handleClick($event)"
+          [disabled]="!state.hasRefinements"
+          >
+          {{ resetLabel }}
+        </button>
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisClearRefinements extends TypedBaseWidget<

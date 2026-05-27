@@ -28,18 +28,19 @@ export {
       <select
         [class]="cx('select')"
         (change)="state.refine($any($event.target).value)"
-      >
-        <option
-          [class]="cx('option')"
-          *ngFor="let item of state.options"
-          [value]="item.value"
-          [selected]="item.value === state.currentRefinement"
         >
-          {{ item.label }}
-        </option>
+        @for (item of state.options; track item) {
+          <option
+            [class]="cx('option')"
+            [value]="item.value"
+            [selected]="item.value === state.currentRefinement"
+            >
+            {{ item.label }}
+          </option>
+        }
       </select>
     </div>
-  `,
+    `,
     standalone: false
 })
 export class NgAisSortBy extends TypedBaseWidget<

@@ -14,36 +14,42 @@ import { noop } from '../utils';
 @Component({
     selector: 'ais-breadcrumb',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <ul [class]="cx('list')">
-        <li
-          *ngFor="let item of items"
-          [ngClass]="[cx('item'), item.isLast ? cx('item', 'selected') : '']"
-          (click)="handleClick($event, item)"
-        >
-          <span
-            *ngIf="item.separator"
-            [class]="cx('separator')"
-            aria-hidden="true"
-          >
-            >
-          </span>
-          <a
-            [class]="cx('link')"
-            href="{{ state.createURL(item.value) }}"
-            *ngIf="!item.isLast"
-            (click)="handleClick($event, item)"
-          >
-            {{ item.label }}
-          </a>
-
-          <span *ngIf="item.isLast">
-            {{ item.label }}
-          </span>
-        </li>
-      </ul>
-    </div>
-  `,
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <ul [class]="cx('list')">
+          @for (item of items; track item) {
+            <li
+              [ngClass]="[cx('item'), item.isLast ? cx('item', 'selected') : '']"
+              (click)="handleClick($event, item)"
+              >
+              @if (item.separator) {
+                <span
+                  [class]="cx('separator')"
+                  aria-hidden="true"
+                  >
+                  >
+                </span>
+              }
+              @if (!item.isLast) {
+                <a
+                  [class]="cx('link')"
+                  href="{{ state.createURL(item.value) }}"
+                  (click)="handleClick($event, item)"
+                  >
+                  {{ item.label }}
+                </a>
+              }
+              @if (item.isLast) {
+                <span>
+                  {{ item.label }}
+                </span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisBreadcrumb extends TypedBaseWidget<
