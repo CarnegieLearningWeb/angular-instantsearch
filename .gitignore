@@ -14,3 +14,5 @@ temp
 dist.tgz
 
 .env
+
+.claude/worktrees
