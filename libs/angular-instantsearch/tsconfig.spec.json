@@ -4,7 +4,8 @@
     "outDir": "../../dist/out-tsc",
     "types": ["jasmine"],
     "module": "preserve",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "lib": ["dom", "es2022"]
   },
   "files": ["src/test.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]

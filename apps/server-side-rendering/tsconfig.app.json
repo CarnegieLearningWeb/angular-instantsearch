@@ -5,7 +5,8 @@
     "outDir": "../../dist/out-tsc",
     "types": [],
     "module": "preserve",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "lib": ["dom", "es2022"]
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"]
