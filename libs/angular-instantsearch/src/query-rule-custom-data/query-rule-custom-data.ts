@@ -25,14 +25,18 @@ import { NgAisIndex } from '../index-widget/index-widget';
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">
       </ng-container>
-
-      <div *ngIf="!template">
-        <div *ngFor="let item of state.items">
-          <pre>{{ item | json }}</pre>
+    
+      @if (!template) {
+        <div>
+          @for (item of state.items; track $index) {
+            <div>
+              <pre>{{ item | json }}</pre>
+            </div>
+          }
         </div>
-      </div>
+      }
     </div>
-  `,
+    `,
     standalone: false
 })
 export class NgAisQueryRuleCustomData extends TypedBaseWidget<

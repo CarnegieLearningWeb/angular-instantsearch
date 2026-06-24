@@ -14,49 +14,53 @@ import {
 @Component({
     selector: 'ais-refinement-list',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <div *ngIf="searchable" [class]="cx('searchBox')">
-        <ais-facets-search
-          [search]="state.searchForItems"
-          [searchPlaceholder]="searchPlaceholder"
-        >
-        </ais-facets-search>
+    @if (!isHidden) {
+      <div [class]="cx()">
+        @if (searchable) {
+          <div [class]="cx('searchBox')">
+            <ais-facets-search
+              [search]="state.searchForItems"
+              [searchPlaceholder]="searchPlaceholder"
+              >
+            </ais-facets-search>
+          </div>
+        }
+        <ul [class]="cx('list')">
+          @for (item of state.items; track item.value) {
+            <li
+              [class]="getItemClass(item)"
+              (click)="refine($event, item)"
+              >
+              <label [class]="cx('label')">
+                <input
+                  [class]="cx('checkbox')"
+                  type="checkbox"
+                  value="{{ item.value }}"
+                  [checked]="item.isRefined"
+                  />
+                <span [class]="cx('labelText')">
+                  <ais-highlight
+                    attribute="highlighted"
+                    [hit]="item"
+                  ></ais-highlight>
+                </span>
+                <span [class]="cx('count')">{{ item.count }}</span>
+              </label>
+            </li>
+          }
+        </ul>
+        @if (showMore) {
+          <button
+            [class]="cx('showMore')"
+            (click)="state.toggleShowMore()"
+            [disabled]="!state.canToggleShowMore"
+            >
+            {{ state.isShowingMore ? showLessLabel : showMoreLabel }}
+          </button>
+        }
       </div>
-
-      <ul [class]="cx('list')">
-        <li
-          [class]="getItemClass(item)"
-          *ngFor="let item of state.items"
-          (click)="refine($event, item)"
-        >
-          <label [class]="cx('label')">
-            <input
-              [class]="cx('checkbox')"
-              type="checkbox"
-              value="{{ item.value }}"
-              [checked]="item.isRefined"
-            />
-            <span [class]="cx('labelText')">
-              <ais-highlight
-                attribute="highlighted"
-                [hit]="item"
-              ></ais-highlight>
-            </span>
-            <span [class]="cx('count')">{{ item.count }}</span>
-          </label>
-        </li>
-      </ul>
-
-      <button
-        [class]="cx('showMore')"
-        *ngIf="showMore"
-        (click)="state.toggleShowMore()"
-        [disabled]="!state.canToggleShowMore"
-      >
-        {{ state.isShowingMore ? showLessLabel : showMoreLabel }}
-      </button>
-    </div>
-  `,
+    }
+    `,
     standalone: false
 })
 export class NgAisRefinementList extends TypedBaseWidget<

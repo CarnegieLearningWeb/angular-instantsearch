@@ -13,26 +13,28 @@ import {
         [class]="cx('link')"
         href="{{ createURL(item.value) }}"
         (click)="handleClick($event, item)"
-      >
+        >
         <span [class]="cx('label')">{{ item.label }}</span>
         <span [class]="cx('count')">{{ item.count }}</span>
       </a>
-
-      <ul
-        [class]="getListClass()"
-        *ngIf="item.isRefined && isArray(item.data) && (item.data || []).length > 0"
-      >
-        <ais-hierarchical-menu-item
-          *ngFor="let child of item.data"
-          [item]="child"
-          [createURL]="createURL"
-          [refine]="refine"
-          [lvl]="lvl + 1"
-        >
-        </ais-hierarchical-menu-item>
-      </ul>
+    
+      @if (item.isRefined && isArray(item.data) && (item.data || []).length > 0) {
+        <ul
+          [class]="getListClass()"
+          >
+          @for (child of item.data; track child.value) {
+            <ais-hierarchical-menu-item
+              [item]="child"
+              [createURL]="createURL"
+              [refine]="refine"
+              [lvl]="lvl + 1"
+              >
+            </ais-hierarchical-menu-item>
+          }
+        </ul>
+      }
     </li>
-  `,
+    `,
     standalone: false
 })
 export class NgAisHierarchicalMenuItem {

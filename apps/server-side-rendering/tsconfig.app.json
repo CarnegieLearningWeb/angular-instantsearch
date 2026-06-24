@@ -3,7 +3,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "outDir": "../../dist/out-tsc",
-    "types": []
+    "types": [],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "lib": ["dom", "es2022"]
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"]

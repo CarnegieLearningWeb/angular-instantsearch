@@ -24,12 +24,14 @@ import {
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">
       </ng-container>
-
-      <span *ngIf="!template" [class]="cx('text')">
-        {{ state.nbHits }} results found in {{ state.processingTimeMS }}ms.
-      </span>
+    
+      @if (!template) {
+        <span [class]="cx('text')">
+          {{ state.nbHits }} results found in {{ state.processingTimeMS }}ms.
+        </span>
+      }
     </div>
-  `,
+    `,
     standalone: false
 })
 export class NgAisStats extends TypedBaseWidget<

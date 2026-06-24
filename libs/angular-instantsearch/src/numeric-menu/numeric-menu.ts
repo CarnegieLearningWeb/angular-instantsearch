@@ -14,23 +14,27 @@ import {
 @Component({
     selector: 'ais-numeric-menu',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <ul [class]="cx('list')">
-        <li [class]="getItemClass(item)" *ngFor="let item of state.items">
-          <label [class]="cx('label')">
-            <input
-              [class]="cx('radio')"
-              type="radio"
-              name="NumericMenu"
-              [checked]="item.isRefined"
-              (change)="refine($event, item)"
-            />
-            <span [class]="cx('labelText')">{{ item.label }}</span>
-          </label>
-        </li>
-      </ul>
-    </div>
-  `,
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <ul [class]="cx('list')">
+          @for (item of state.items; track item.label) {
+            <li [class]="getItemClass(item)">
+              <label [class]="cx('label')">
+                <input
+                  [class]="cx('radio')"
+                  type="radio"
+                  name="NumericMenu"
+                  [checked]="item.isRefined"
+                  (change)="refine($event, item)"
+                  />
+                <span [class]="cx('labelText')">{{ item.label }}</span>
+              </label>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisNumericMenu extends TypedBaseWidget<

@@ -6,7 +6,9 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": [],
-    "lib": ["dom", "es2018"]
+    "lib": ["dom", "es2022"],
+    "module": "preserve",
+    "moduleResolution": "bundler"
   },
   "exclude": ["src/test.ts", "**/*.spec.ts"],
   "include": ["**/*.ts"]

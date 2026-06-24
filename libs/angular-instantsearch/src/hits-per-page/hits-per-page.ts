@@ -14,22 +14,25 @@ import { noop } from '../utils';
 @Component({
     selector: 'ais-hits-per-page',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <select
-        [class]="cx('select')"
-        (change)="state.refine($any($event.target).value)"
-      >
-        <option
-          [class]="cx('option')"
-          *ngFor="let item of state.items"
-          [value]="item.value"
-          [selected]="item.isRefined"
-        >
-          {{ item.label }}
-        </option>
-      </select>
-    </div>
-  `,
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <select
+          [class]="cx('select')"
+          (change)="state.refine($any($event.target).value)"
+          >
+          @for (item of state.items; track item.value) {
+            <option
+              [class]="cx('option')"
+              [value]="item.value"
+              [selected]="item.isRefined"
+              >
+              {{ item.label }}
+            </option>
+          }
+        </select>
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisHitsPerPage extends TypedBaseWidget<

@@ -32,7 +32,7 @@ import {
         [title]="state.isBrowserSupported ? buttonTitle : disabledButtonTitle"
         [disabled]="!state.isBrowserSupported"
         (click)="handleClick($event)"
-      >
+        >
         <ng-container
           *ngTemplateOutlet="
             button ? button : defaultButton;
@@ -49,13 +49,13 @@ import {
         ></ng-container>
       </div>
     </div>
-
+    
     <ng-template
       #defaultButton
       let-status="status"
       let-errorCode="errorCode"
       let-isListening="isListening"
-    >
+      >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -66,14 +66,13 @@ import {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-      >
-        <ng-container
-          *ngIf="
-            isNotAllowedError();
-            then errorSvgContent;
-            else normalSvgContent
-          "
-        ></ng-container>
+        >
+        @if (
+          isNotAllowedError()) {
+          <ng-template [ngTemplateOutlet]="errorSvgContent"></ng-template>
+        } @else {
+          <ng-template [ngTemplateOutlet]="normalSvgContent"></ng-template>
+        }
         <ng-template #errorSvgContent>
           <line x1="1" y1="1" x2="23" y2="23"></line>
           <path
@@ -99,7 +98,7 @@ import {
     <ng-template #defaultStatus let-transcript="transcript">
       <p>{{ transcript }}</p>
     </ng-template>
-  `,
+    `,
     standalone: false
 })
 export class NgAisVoiceSearch

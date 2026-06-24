@@ -15,27 +15,31 @@ import { noop } from '../utils';
 @Component({
     selector: 'ais-current-refinements',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <ul [class]="cx('list')" *ngFor="let item of state.items">
-        <li [class]="cx('item')">
-          <span [class]="cx('label')">{{ item.label | titlecase }}:</span>
-
-          <span
-            [class]="cx('category')"
-            *ngFor="let refinement of item.refinements"
-          >
-            <span [class]="cx('categoryLabel')">{{ refinement.label }}</span>
-            <button
-              [class]="cx('delete')"
-              (click)="handleClick($event, refinement)"
-            >
-              ✕
-            </button>
-          </span>
-        </li>
-      </ul>
-    </div>
-  `,
+    @if (!isHidden) {
+      <div [class]="cx()">
+        @for (item of state.items; track item.attribute) {
+          <ul [class]="cx('list')">
+            <li [class]="cx('item')">
+              <span [class]="cx('label')">{{ item.label | titlecase }}:</span>
+              @for (refinement of item.refinements; track refinement.value) {
+                <span
+                  [class]="cx('category')"
+                  >
+                  <span [class]="cx('categoryLabel')">{{ refinement.label }}</span>
+                  <button
+                    [class]="cx('delete')"
+                    (click)="handleClick($event, refinement)"
+                    >
+                    ✕
+                  </button>
+                </span>
+              }
+            </li>
+          </ul>
+        }
+      </div>
+    }
+    `,
     standalone: false
 })
 export class NgAisCurrentRefinements extends TypedBaseWidget<

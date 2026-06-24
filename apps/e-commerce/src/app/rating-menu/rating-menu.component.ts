@@ -38,34 +38,36 @@ export type RatingMenuState = {
 @Component({
     selector: 'app-rating-menu',
     template: `
-    <div [class]="cx()" *ngIf="!isHidden">
-      <ul [class]="cx('list')">
-        <li
-          *ngFor="let item of state.items"
-          [class]="getRatingItemClass(item, state.items)"
-          (click)="handleClick($event, item.value)"
-        >
-          <a
-            href="{{ state.createURL(item.value) }}"
-            [class]="cx('link')"
-            (click)="handleClick($event, item.value)"
-          >
-            <ng-container *ngFor="let star of item.stars">
-              <ng-container
+    @if (!isHidden) {
+      <div [class]="cx()">
+        <ul [class]="cx('list')">
+          @for (item of state.items; track item.value) {
+            <li
+              [class]="getRatingItemClass(item, state.items)"
+              (click)="handleClick($event, item.value)"
+              >
+              <a
+                href="{{ state.createURL(item.value) }}"
+                [class]="cx('link')"
+                (click)="handleClick($event, item.value)"
+                >
+                @for (star of item.stars; track $index) {
+                  <ng-container
                 *ngTemplateOutlet="
                   starSvg || defaultStarSvg;
                   context: { star: star }
                 "
-              >
-              </ng-container>
-            </ng-container>
-
-            <span [class]="cx('count')">{{ item.count }}</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
+                    >
+                  </ng-container>
+                }
+                <span [class]="cx('count')">{{ item.count }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+    
     <ng-template #defaultStarSvg let-star="star">
       <svg
         [ngClass]="{
@@ -75,14 +77,14 @@ export type RatingMenuState = {
         }"
         aria-hidden="true"
         viewBox="0 0 16 16"
-      >
+        >
         <path
           fill-rule="evenodd"
           d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
         ></path>
       </svg>
     </ng-template>
-  `,
+    `,
     standalone: false
 })
 export class RatingMenu extends BaseWidget<RatingMenuState> {

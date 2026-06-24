@@ -48,37 +48,36 @@
       <!-- Hits -->
       <ais-hits [transformItems]="transformHits">
         <ng-template let-hits="hits">
-          <div class="hit media" *ngFor="let hit of hits">
-            <div class="media-left">
-              <img [src]="hit.image" class="media-object" />
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">
-                <ais-highlight [hit]="hit" attribute="title"></ais-highlight>
-
-                <i
-                  *ngFor="let star of hit.stars"
-                  [ngClass]="{
-                    fa: true,
-                    'fa-star': star,
-                    'fa-star-o': !star
-                  }"
-                >
-                </i>
-              </h4>
-
-              <p class="year">{{ hit.year }}</p>
-              <div class="genre">
-                <span
-                  class="badge"
-                  *ngFor="let genre of hit.genre"
-                  style="margin-right: 5px"
-                >
-                  {{ genre }}
-                </span>
+          @for (hit of hits; track hit.objectID) {
+            <div class="hit media">
+              <div class="media-left">
+                <img [src]="hit.image" class="media-object" />
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <ais-highlight [hit]="hit" attribute="title"></ais-highlight>
+                  @for (star of hit.stars; track $index) {
+                    <i
+                      [ngClass]="{
+                        fa: true,
+                        'fa-star': star,
+                        'fa-star-o': !star
+                      }"
+                    >
+                    </i>
+                  }
+                </h4>
+                <p class="year">{{ hit.year }}</p>
+                <div class="genre">
+                  @for (genre of hit.genre; track $index) {
+                    <span class="badge" style="margin-right: 5px">
+                      {{ genre }}
+                    </span>
+                  }
+                </div>
               </div>
             </div>
-          </div>
+          }
         </ng-template>
       </ais-hits>
 
