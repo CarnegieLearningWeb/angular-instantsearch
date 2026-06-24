@@ -29,7 +29,7 @@ export {
         [class]="cx('select')"
         (change)="state.refine($any($event.target).value)"
         >
-        @for (item of state.options; track item) {
+        @for (item of state.options; track item.value) {
           <option
             [class]="cx('option')"
             [value]="item.value"

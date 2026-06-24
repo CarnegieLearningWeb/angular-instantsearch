@@ -29,7 +29,7 @@ import { noop } from 'instantsearch.js/es/lib/utils';
       @if (!template) {
         <div>
           <ul [class]="cx('list')">
-            @for (hit of state.hits; track hit) {
+            @for (hit of state.hits; track hit.objectID) {
               <li [class]="cx('item')">
                 <ais-highlight attribute="name" [hit]="hit"> </ais-highlight>
               </li>

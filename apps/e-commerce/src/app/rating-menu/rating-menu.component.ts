@@ -41,7 +41,7 @@ export type RatingMenuState = {
     @if (!isHidden) {
       <div [class]="cx()">
         <ul [class]="cx('list')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.value) {
             <li
               [class]="getRatingItemClass(item, state.items)"
               (click)="handleClick($event, item.value)"
@@ -51,7 +51,7 @@ export type RatingMenuState = {
                 [class]="cx('link')"
                 (click)="handleClick($event, item.value)"
                 >
-                @for (star of item.stars; track star) {
+                @for (star of item.stars; track $index) {
                   <ng-container
                 *ngTemplateOutlet="
                   starSvg || defaultStarSvg;

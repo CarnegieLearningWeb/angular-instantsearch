@@ -17,7 +17,7 @@ import { noop } from '../utils';
     @if (!isHidden) {
       <div [class]="cx()">
         <ul [class]="cx('list')">
-          @for (item of items; track item) {
+          @for (item of items; track item.value) {
             <li
               [ngClass]="[cx('item'), item.isLast ? cx('item', 'selected') : '']"
               (click)="handleClick($event, item)"

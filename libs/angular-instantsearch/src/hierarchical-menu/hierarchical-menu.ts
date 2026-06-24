@@ -17,7 +17,7 @@ import { parseNumberInput, noop } from '../utils';
     @if (!isHidden) {
       <div [class]="cx()">
         <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.value) {
             <ais-hierarchical-menu-item
               [item]="item"
               [createURL]="state.createURL"

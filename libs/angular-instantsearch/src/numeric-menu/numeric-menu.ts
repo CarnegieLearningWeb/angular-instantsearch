@@ -17,7 +17,7 @@ import {
     @if (!isHidden) {
       <div [class]="cx()">
         <ul [class]="cx('list')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.label) {
             <li [class]="getItemClass(item)">
               <label [class]="cx('label')">
                 <input

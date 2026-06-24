@@ -22,7 +22,7 @@ import {
         <ul
           [class]="getListClass()"
           >
-          @for (child of item.data; track child) {
+          @for (child of item.data; track child.value) {
             <ais-hierarchical-menu-item
               [item]="child"
               [createURL]="createURL"

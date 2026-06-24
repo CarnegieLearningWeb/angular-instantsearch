@@ -26,7 +26,7 @@ import {
           </div>
         }
         <ul [class]="cx('list')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.value) {
             <li
               [class]="getItemClass(item)"
               (click)="refine($event, item)"

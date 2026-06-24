@@ -28,7 +28,7 @@ import { NgAisIndex } from '../index-widget/index-widget';
     
       @if (!template) {
         <div>
-          @for (item of state.items; track item) {
+          @for (item of state.items; track $index) {
             <div>
               <pre>{{ item | json }}</pre>
             </div>

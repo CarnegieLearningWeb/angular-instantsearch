@@ -18,7 +18,7 @@ import {
     @if (!isHidden) {
       <div [class]="cx()">
         <ul [class]="cx('list')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.value) {
             <li
               [class]="getItemClass(item)"
               (click)="handleClick($event, item.value)"

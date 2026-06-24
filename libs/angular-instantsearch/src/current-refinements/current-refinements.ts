@@ -17,11 +17,11 @@ import { noop } from '../utils';
     template: `
     @if (!isHidden) {
       <div [class]="cx()">
-        @for (item of state.items; track item) {
+        @for (item of state.items; track item.attribute) {
           <ul [class]="cx('list')">
             <li [class]="cx('item')">
               <span [class]="cx('label')">{{ item.label | titlecase }}:</span>
-              @for (refinement of item.refinements; track refinement) {
+              @for (refinement of item.refinements; track refinement.value) {
                 <span
                   [class]="cx('category')"
                   >

@@ -135,91 +135,91 @@
             }
           ]"
         >
-      </ais-hits-per-page>
-    </header>
+        </ais-hits-per-page>
+      </header>
 
-    <ais-hits>
-      <ng-template let-hits="hits">
-        <ol class="ais-Hits-list">
-          @for (item of hits; track item) {
-            <li class="ais-Hits-item">
-              <article class="hit">
-                <header class="hit-image-container">
-                  <img [src]="item.image" [alt]="item.name" class="hit-image" />
-                </header>
-                <div class="hit-info-container">
-                  <p class="hit-category">
-                    {{ item.categories && item.categories[0] }}
-                  </p>
-                  <h1>
-                    <ais-highlight
-                      attribute="name"
-                      [hit]="item"
-                    ></ais-highlight>
-                  </h1>
-                  <p class="hit-description">
-                    <ais-snippet
-                      attribute="description"
-                      [hit]="item"
-                    ></ais-snippet>
-                    •
-                  </p>
-                  <footer>
-                    <p>
-                      <span class="hit-em">$&nbsp;</span>
-                      <strong>{{ item.price | currency : 'USD' : '' }}</strong>
-                      <span class="hit-em hit-rating">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          width="8"
-                          height="8"
-                          >
-                          <path
-                            fill="#e2a400"
-                            fill-rule="evenodd"
-                            d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
-                            />
-                        </svg>
-                        {{ item.rating }}
-                      </span>
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <ol class="ais-Hits-list">
+            @for (item of hits; track item.objectID) {
+              <li class="ais-Hits-item">
+                <article class="hit">
+                  <header class="hit-image-container">
+                    <img [src]="item.image" [alt]="item.name" class="hit-image" />
+                  </header>
+                  <div class="hit-info-container">
+                    <p class="hit-category">
+                      {{ item.categories && item.categories[0] }}
                     </p>
-                  </footer>
-                </div>
-              </article>
-            </li>
-          }
-        </ol>
-      </ng-template>
-    </ais-hits>
+                    <h1>
+                      <ais-highlight
+                        attribute="name"
+                        [hit]="item"
+                      ></ais-highlight>
+                    </h1>
+                    <p class="hit-description">
+                      <ais-snippet
+                        attribute="description"
+                        [hit]="item"
+                      ></ais-snippet>
+                      •
+                    </p>
+                    <footer>
+                      <p>
+                        <span class="hit-em">$&nbsp;</span>
+                        <strong>{{ item.price | currency : 'USD' : '' }}</strong>
+                        <span class="hit-em hit-rating">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            width="8"
+                            height="8"
+                          >
+                            <path
+                              fill="#e2a400"
+                              fill-rule="evenodd"
+                              d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
+                            />
+                          </svg>
+                          {{ item.rating }}
+                        </span>
+                      </p>
+                    </footer>
+                  </div>
+                </article>
+              </li>
+            }
+          </ol>
+        </ng-template>
+      </ais-hits>
 
-    <app-no-results></app-no-results>
+      <app-no-results></app-no-results>
 
-    <footer class="container-footer">
-      <ais-pagination
-        [padding]="2"
-        [showFirst]="false"
-        [showLast]="false"
-      ></ais-pagination>
-    </footer>
-  </section>
-</main>
+      <footer class="container-footer">
+        <ais-pagination
+          [padding]="2"
+          [showFirst]="false"
+          [showLast]="false"
+        ></ais-pagination>
+      </footer>
+    </section>
+  </main>
 
-<aside data-layout="mobile">
-  <button class="filters-button" (click)="openFilters()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 14">
-      <path
-        d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
-        stroke="#fff"
-        stroke-width="1.29"
-        fill="none"
-        fill-rule="evenodd"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+  <aside data-layout="mobile">
+    <button class="filters-button" (click)="openFilters()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 14">
+        <path
+          d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
+          stroke="#fff"
+          stroke-width="1.29"
+          fill="none"
+          fill-rule="evenodd"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
-    </svg>
+      </svg>
 
-    Filters
-  </button>
-</aside>
+      Filters
+    </button>
+  </aside>
 </ais-instantsearch>

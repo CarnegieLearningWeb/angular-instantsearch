@@ -31,7 +31,7 @@ import {
           </symbol>
         </svg>
         <ul [class]="cx('list')">
-          @for (item of state.items; track item) {
+          @for (item of state.items; track item.value) {
             <li
               [class]="getItemClass(item)"
               (click)="handleClick($event, item.value)"
@@ -41,7 +41,7 @@ import {
                 [class]="cx('link')"
                 (click)="handleClick($event, item.value)"
                 >
-                @for (star of item.stars; track star) {
+                @for (star of item.stars; track $index) {
                   <svg
                     width="24"
                     height="24"
